@@ -1,5 +1,5 @@
 context( "Rcpp API" )
-sourceCpp( "testthat/cpp/misc.cpp" )
+sourceCpp( "cpp/misc.cpp" )
 
 test_that( "Symbol correctly handles various SEXP", {
 	res <- symbol_()

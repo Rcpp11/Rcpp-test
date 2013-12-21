@@ -1,6 +1,6 @@
 
 context( "data frame manipulation with Rcpp::DataFrame" )
-sourceCpp( "testthat/cpp/DataFrame.cpp" )
+sourceCpp( "cpp/DataFrame.cpp" )
     
 test_that( "DataFrame can be constructed from a SEXP", {
     DF <- data.frame(a=1:3, b=c("a","b","c"))

@@ -1,5 +1,5 @@
 context( "wrap" )
-sourceCpp( "testthat/cpp/wrap.cpp" )
+sourceCpp( "cpp/wrap.cpp" )
 
 test_that( "wrap handles std::map", {
   expect_equal(

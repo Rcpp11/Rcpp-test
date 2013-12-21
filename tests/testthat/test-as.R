@@ -1,6 +1,6 @@
 
 context( "Conversion from SEXP to C++ type with as<>" )
-sourceCpp( "testthat/cpp/as.cpp" )
+sourceCpp( "cpp/as.cpp" )
 
 test_that( "as<> works for primitive types", {
   expect_equal( as_int(10)         , 10L)

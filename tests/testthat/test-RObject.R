@@ -1,5 +1,5 @@
 context( "RObject" )
-sourceCpp( "testthat/cpp/RObject.cpp" )
+sourceCpp( "cpp/RObject.cpp" )
 
 test_that( "implicit as and wrap work fine with attributes", {
 

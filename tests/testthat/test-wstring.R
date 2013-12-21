@@ -1,5 +1,5 @@
 context( "wstring" )
-sourceCpp( "testthat/cpp/wstring.cpp" )
+sourceCpp( "cpp/wstring.cpp" )
 
 test_that( "wstring are supported", {
   expect_equal( CharacterVector_wstring(), c("foobar", "foobar" ) )

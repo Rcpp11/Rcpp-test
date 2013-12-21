@@ -1,5 +1,5 @@
 context( "External pointers" )
-sourceCpp( "testthat/cpp/XPtr.cpp" )
+sourceCpp( "cpp/XPtr.cpp" )
     
 test_that( "XPtr works", {
     xp <- xptr_1()

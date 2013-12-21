@@ -1,5 +1,5 @@
 context( "Modules" )
-sourceCpp( "testthat/cpp/Module.cpp" )
+sourceCpp( "cpp/Module.cpp" )
     
 test_that( "Module objects keep state in C++", {
     expect_equal( bar( 2L ), 4L )

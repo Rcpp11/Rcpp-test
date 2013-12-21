@@ -1,5 +1,5 @@
 context( "R math" )
-sourceCpp( "testthat/cpp/rmath.cpp" )
+sourceCpp( "cpp/rmath.cpp" )
 
 test_that( "(dpq)norm gives correct results", {
     x <- 0.25
