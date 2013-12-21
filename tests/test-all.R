@@ -1,9 +1,8 @@
 library(testthat)
-sourceCpp <- function(file, ...){
-  writeLines(head( readLines(file), 5 ))
-  Rcpp::sourceCpp(file, ...)
-}
+print(getwd())
+print(dir(getwd()))
+print(dir("testthat"))
+print(dir("testthat/cpp"))
+
 test_check( "Rcpp" )
-
-
 
