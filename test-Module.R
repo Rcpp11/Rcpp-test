@@ -1,5 +1,5 @@
 context( "Modules" )
-sourceCpp( "cpp/Module.cpp", env = environment()
+sourceCpp( "cpp/Module.cpp", env = environment() )
     
 test_that( "Module objects keep state in C++", {
     expect_equal( bar( 2L ), 4L )
