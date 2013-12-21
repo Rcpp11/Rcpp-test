@@ -478,7 +478,7 @@ test_that( "matching functions work", {
     expect_equal( runit_duplicated(x), duplicated(x) )
 })   
 
-test_that( "set functions work", {
+test_that( "set functions work", {
     expect_equal( 
       sort(runit_setdiff( 1:10, 1:5 )), 
       sort(setdiff( 1:10, 1:5))
