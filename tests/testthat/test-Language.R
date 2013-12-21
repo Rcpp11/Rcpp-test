@@ -1,5 +1,5 @@
 context( "Language" )
-sourceCpp( "cpp/Language.cpp" )
+sourceCpp( "testthat/cpp/Language.cpp" )
 
 test_that( "Language handles R objects", {
 	expect_equal( runit_language( call("rnorm") ), call("rnorm" ))

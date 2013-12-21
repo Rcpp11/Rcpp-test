@@ -1,5 +1,5 @@
 context( "sugar" )
-sourceCpp( "cpp/sugar.cpp" )
+sourceCpp( "testthat/cpp/sugar.cpp" )
 
 test_that( "abs handles numeric and integer",{
 	x <- rnorm(10)
