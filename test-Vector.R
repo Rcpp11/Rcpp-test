@@ -268,7 +268,7 @@ test_that( "CharacterVector proxies handle comoiund operators", {
     expect_equal( character_plusequals(), c("foobar", "barfoobar"))
 })
 
-test_that( "matix indexing works", {
+test_that( "matrix indexing works", {
     x <- matrix( as.character(1:16), ncol = 4 )
     expect_equal( character_matrix_indexing(x), paste(diag(x), collapse = ""))
 
