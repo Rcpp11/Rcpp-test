@@ -101,7 +101,7 @@ test_that( "Vector( range ) works", {
     
 })
 
-test_that( "Vector supports names", { 
+test_that( "Vector supports names", { 
     expect_equal(names(integer_names_set()), c("foo", "bar"))
     expect_equal(
       integer_names_get( c("foo" = 1L, "bar" = 2L) ),
