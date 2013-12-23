@@ -1,5 +1,5 @@
 context( "environments" )
-sourceCpp( "cpp/Environment.cpp" )
+sourceCpp( "cpp/Environment.cpp", env = environment() )
 
 test_that( "Environment::ls() gives correct results", {
 	e <- new.env( )
@@ -31,7 +31,7 @@ test_that( "Environment::exists is correct", {
 test_that( "Environment::assign is correct", {
 	e <- new.env( )
 	expect_true( runit_assign(e, "a", 1:10 ))
-	expect_equal( ls(e), c("a", "b"))
+	expect_equal( ls(e), c("a"))
 	expect_equal( e$a, 1:10)
 	
 	lockBinding( "a", e )
