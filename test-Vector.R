@@ -304,7 +304,7 @@ test_that( "CharacterVector proxy work", {
     expect_equal( character_find_( c("bar", "foo", "bob") ), 1L)
 })
 
-test_that( "List proxy can expand to bool and int", {
+test_that( "List proxy can expand to bool and int", {
     expect_equal( List_extract(list(TRUE, 4)), list(TRUE, 4L) )
     expect_equal( List_extract(list(FALSE, -4L)), list(FALSE,-4L) )
 })
