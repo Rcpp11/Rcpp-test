@@ -123,3 +123,15 @@ test_that( "NA is correctly handled", {
         )
 })
 
+test_that( "... is correctly handled", {
+  res <- countArgs(10, "foo", rfzegvze(), ffz(dsfz(fzfz)) )
+  expect_equal(res, 4L)
+  
+  res <- countNamedArgs(a=1, b=3, c="foo", d = fdzfz() )
+  expect_equal(res$count, 4L)
+  expect_equal(res$names, letters[1:4])
+  
+})
+
+
+

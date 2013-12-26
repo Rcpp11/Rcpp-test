@@ -101,7 +101,7 @@ test_that( "Vector( range ) works", {
     
 })
 
-test_that( "Vector supports names", { 
+test_that( "Vector supports names", { 
     expect_equal(names(integer_names_set()), c("foo", "bar"))
     expect_equal(
       integer_names_get( c("foo" = 1L, "bar" = 2L) ),
@@ -268,7 +268,7 @@ test_that( "CharacterVector proxies handle comoiund operators", {
     expect_equal( character_plusequals(), c("foobar", "barfoobar"))
 })
 
-test_that( "matix indexing works", {
+test_that( "matrix indexing works", {
     x <- matrix( as.character(1:16), ncol = 4 )
     expect_equal( character_matrix_indexing(x), paste(diag(x), collapse = ""))
 
@@ -304,7 +304,7 @@ test_that( "CharacterVector proxy work", {
     expect_equal( character_find_( c("bar", "foo", "bob") ), 1L)
 })
 
-test_that( "List proxy can expand to bool and int", {
+test_that( "List proxy can expand to bool and int", {
     expect_equal( List_extract(list(TRUE, 4)), list(TRUE, 4L) )
     expect_equal( List_extract(list(FALSE, -4L)), list(FALSE,-4L) )
 })

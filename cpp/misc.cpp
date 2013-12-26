@@ -231,3 +231,22 @@ S4 S4_dotdata(S4 foo){
     foo.slot( ".Data" ) = "foooo" ;
     return foo ;
 }
+
+// [[Rcpp::export]]
+int countArgs(Dots dots){
+    return dots.size() ;    
+}
+
+// [[Rcpp::export]]
+List countNamedArgs( NamedDots dots){
+    CharacterVector names( dots.size() ) ;
+    int n = dots.size() ;
+    for( int i=0; i<n; i++){
+        names[i] = String( PRINTNAME(dots.symbol(i)) ) ;
+    }
+    return List::create( 
+        _["count"] = n, 
+        _["names"] = names
+        ) ;
+}
+
