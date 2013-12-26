@@ -44,16 +44,6 @@ test_that( "Matrix handles primitive types", {
 	x <- matrix( g(1:16), ncol = 4 )
 	expect_equal( matrix_generic(x), g(diag(matrix(1:16,ncol=4))))
 
-} )
-
-test_that( "Matrix:diag works", {
-	expected <- matrix( 0L, nrow = 5, ncol = 5 )
-	diag( expected ) <- 1L
-	expect_equal( matrix_integer_diag(), expected)
-
-	expected <- matrix( "", nrow = 5, ncol = 5 )
-	diag( expected ) <- "foo"
-	expect_equal( matrix_character_diag(), expected)
 })
 
 test_that( "Matrix creates a matrix from a number of rows and columns", {
