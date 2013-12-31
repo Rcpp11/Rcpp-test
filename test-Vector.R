@@ -224,11 +224,6 @@ test_that( "clone works", {
     expect_equal( y, 10:1)
 })     
 
-test_that( "Vector::import work", {
-    expect_equal( numeric_import(), 0:9)
-    expect_equal( numeric_importtransform(), (0:9)^2)
-})
-
 test_that( "List indexing works", {
     expect_equal(list_template_(), list( "foo", 10L, 10.2, FALSE))
     
