@@ -71,35 +71,3 @@ test_that( "wrap handles const char*", {
   expect_equal(nonnull_const_char(), "foo")
 })
 
-test_that( "wrap handles unordered_map", {
-  res <- unordered_map_string_int()
-  expect_equal( res[["a"]], 200L )
-  expect_equal( res[["b"]], 100L )
-  expect_equal( res[["c"]], 300L )
-
-  res <- unordered_map_string_double()
-  expect_equal( res[["a"]], 200 )
-  expect_equal( res[["b"]], 100 )
-  expect_equal( res[["c"]], 300 )
-
-  res <- unordered_map_string_bool()
-  expect_equal( res[["a"]], FALSE )
-  expect_equal( res[["b"]], TRUE  )
-  expect_equal( res[["c"]], TRUE  )
-
-  res <- unordered_map_string_Rbyte()
-  expect_equal( res[["a"]], as.raw(1) )
-  expect_equal( res[["b"]], as.raw(0) )
-  expect_equal( res[["c"]], as.raw(2) )
-
-  res <- unordered_map_string_string()
-  expect_equal( res[["a"]], "bar"   )
-  expect_equal( res[["b"]], "foo"   )
-  expect_equal( res[["c"]], "bling" )
-
-  res <- unordered_map_string_generic()
-  expect_equal( res[["a"]], c(1L,2L,2L)    )
-  expect_equal( res[["b"]], c(1L,2L)       )
-  expect_equal( res[["c"]], c(1L,2L,2L,2L) )
-})
-

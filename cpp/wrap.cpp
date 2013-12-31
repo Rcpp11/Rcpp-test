@@ -122,60 +122,6 @@ SEXP nonnull_const_char(){
 }
 
 // [[Rcpp::export]]
-IntegerVector unordered_map_string_int(){
-    RCPP_UNORDERED_MAP< std::string, int > m ;
-    m["b"] = 100;
-    m["a"] = 200;
-    m["c"] = 300;
-    return wrap(m);
-}
-
-// [[Rcpp::export]]
-NumericVector unordered_map_string_double(){
-    RCPP_UNORDERED_MAP<std::string,double> m ;
-    m["b"] = 100;
-    m["a"] = 200;
-    m["c"] = 300;
-    return wrap(m);
-}
-
-// [[Rcpp::export]]
-LogicalVector unordered_map_string_bool(){
-    RCPP_UNORDERED_MAP<std::string,bool> m ;
-    m["b"] = true;
-    m["a"] = false;
-    m["c"] = true;
-    return wrap(m) ;
-}
-
-// [[Rcpp::export]]
-RawVector unordered_map_string_Rbyte(){
-    RCPP_UNORDERED_MAP<std::string,Rbyte> m ;
-    m["b"] = (Rbyte)0;
-    m["a"] = (Rbyte)1;
-    m["c"] = (Rbyte)2;
-    return wrap(m);
-}
-
-// [[Rcpp::export]]
-CharacterVector unordered_map_string_string(){
-    RCPP_UNORDERED_MAP<std::string,std::string> m ;
-	m["b"] = "foo" ;
-  	m["a"] = "bar" ;
-  	m["c"] = "bling" ;
-  	return wrap(m) ;
-}
-
-// [[Rcpp::export]]
-List unordered_map_string_generic(){
-    RCPP_UNORDERED_MAP< std::string,std::vector<int> > m ;
-    std::vector<int> b; b.push_back(1); b.push_back(2); m["b"] = b ;
-    std::vector<int> a; a.push_back(1); a.push_back(2); a.push_back(2); m["a"] = a;
-    std::vector<int> c; c.push_back(1); c.push_back(2); c.push_back(2); c.push_back(2); m["c"] = c;
-    return wrap(m);
-}
-
-// [[Rcpp::export]]
 SEXP map_int_double(){
     std::map<int, double> map ;
     map[0] = 2.0 ;
