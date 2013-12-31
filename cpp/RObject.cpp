@@ -109,11 +109,6 @@ std::set<std::string> stdsetstring(){
 }
 
 // [[Rcpp::export]]
-std::vector<std::string> attributeNames(DataFrame x){
-    return x.attributeNames() ;
-}
-
-// [[Rcpp::export]]
 bool hasAttribute( DataFrame x){
     bool has_class = x.hasAttribute( "class" ) ;
     return has_class ;
