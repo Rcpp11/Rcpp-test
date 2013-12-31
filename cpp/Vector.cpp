@@ -131,21 +131,6 @@ IntegerVector integer_dimension_ctor_3(){
 }
 
 // [[Rcpp::export]]
-IntegerVector integer_range_ctor_1(){
-    int x[] = { 0, 1, 2, 3 } ;
-	IntegerVector y( x, x+4 ) ;
-	return y;
-}
-
-// [[Rcpp::export]]
-IntegerVector integer_range_ctor_2(){
-    std::vector<int> vec(4) ;
-	for( size_t i = 0; i<4; i++) vec[i] = i;
-	IntegerVector y( vec.begin(), vec.end() ) ;
-	return y;
-}
-
-// [[Rcpp::export]]
 IntegerVector integer_names_set(){
     IntegerVector y(2) ;
 	std::vector<std::string> names(2)  ;
@@ -504,24 +489,6 @@ CharacterVector character_assign2(){
 	vec[3] = "boom" ;
 	CharacterVector y ;
 	y.assign( vec.begin(), vec.end() ) ;
-	return y;
-}
-
-// [[Rcpp::export]]
-CharacterVector character_range_ctor1(){
-    const char* x[] = { "foo", "bar", "bling", "boom" } ;
-    CharacterVector y( x, x+4 ) ;
-    return y;
-}
-
-// [[Rcpp::export]]
-CharacterVector character_range_ctor2(){
-    std::vector<std::string> vec(4) ;
-	vec[0] = "foo";
-	vec[1] = "bar";
-	vec[2] = "bling";
-	vec[3] = "boom" ;
-	CharacterVector y( vec.begin(), vec.end() ) ;
 	return y;
 }
 

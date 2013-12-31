@@ -93,14 +93,6 @@ test_that( "ExpressionVector can eval", {
     expect_equal( expression_evalenv(e), 1:10)
 })
 
-test_that( "Vector( range ) works", {
-    expect_equal( integer_range_ctor_1(), 0:3)
-    expect_equal( integer_range_ctor_2(), 0:3) 
-    expect_equal( character_range_ctor1(), c("foo", "bar", "bling", "boom"))
-    expect_equal( character_range_ctor2(), c("foo", "bar", "bling", "boom"))
-    
-})
-
 test_that( "Vector supports names", { 
     expect_equal(names(integer_names_set()), c("foo", "bar"))
     expect_equal(
