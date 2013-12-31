@@ -96,9 +96,6 @@ test_that( "implicit as and wrap work fine with attributes", {
 })
 
 test_that( "api classes handle attributes", {
-	df <- data.frame( x = 1:10, y = 1:10 )
-	expect_true( all( c("names","row.names","class") %in% attributeNames(df)))
-
 	df <- data.frame( x = 1:10 )
 	expect_true( hasAttribute( df ))
 
