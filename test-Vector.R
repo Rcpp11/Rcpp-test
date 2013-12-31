@@ -224,19 +224,6 @@ test_that( "clone works", {
     expect_equal( y, 10:1)
 })     
 
-test_that( "List indexing works", {
-    expect_equal(list_template_(), list( "foo", 10L, 10.2, FALSE))
-    
-    ## a matrix of integer vectors
-    x <- structure( lapply( 1:16, function(x) seq.int(x) ), dim = c( 4, 4) )
-    expect_equal( list_matrix_indexing_1(x), diag(x))
-    expect_equal(diag(list_matrix_indexing_2(x)), rep(list("foo"), 4) )
-
-    ## drop dimensions
-    dim(x) <- NULL
-    expect_error( list_matrix_indexing_2(x) )
-})
-
 test_that( "List supports stl-like iterators", {
     data <- list( x = letters, y = LETTERS, z = 1:4 )
     expect_equal(list_iterator_( data, length ),
@@ -253,28 +240,6 @@ test_that( "wrap handles std::complex", {
 
 test_that( "CharacterVector proxies handle comoiund operators", {
     expect_equal( character_plusequals(), c("foobar", "barfoobar"))
-})
-
-test_that( "matrix indexing works", {
-    x <- matrix( as.character(1:16), ncol = 4 )
-    expect_equal( character_matrix_indexing(x), paste(diag(x), collapse = ""))
-
-    y <- as.vector( x )
-    expect_error( fun(y) )
-
-    expect_equal( diag(character_matrix_indexing_lhs(x)), rep("foo", 4) )
-})
-
-test_that( "Matrix::row works", {
-    x <- matrix(letters[1:16], nrow = 4)
-
-    expect_equal( character_matrix_row_iteration_incr(x), "bfjn")
-    expect_equal( character_matrix_row_iteration_decr(x), "njf")
-})
-
-test_that( "Vector::assign works", {
-    expect_equal( character_assign1(), c("foo", "bar", "bling", "boom"))
-    expect_equal( character_assign2(), c("foo", "bar", "bling", "boom"))
 })
 
 test_that( "CharacterVector proxy work", {

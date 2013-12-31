@@ -290,23 +290,6 @@ List list_VECSXP_( SEXP vec){
 }
 
 // [[Rcpp::export]]
-List list_matrix_indexing_1( List m ){
-    List out(4) ;
-    for( size_t i=0 ; i<4; i++){
-        out[i] = m(i,i) ;
-    }
-    return out ;
-}
-
-// [[Rcpp::export]]
-List list_matrix_indexing_2( GenericVector m ){
-    for(size_t i=0 ; i<4; i++){
-        m(i,i) = "foo" ;
-    }
-    return m ;
-}
-
-// [[Rcpp::export]]
 List list_Dimension_constructor_1(){
     return List( Dimension( 5 ) ) ;
 }
@@ -412,69 +395,6 @@ CharacterVector character_plusequals(){
     x[0] += "bar" ;
     x[1] += x[0] ;
     return x ;
-}
-
-// [[Rcpp::export]]
-CharacterVector character_matrix_indexing( CharacterVector m ){
-    std::string trace;
-    for( size_t i=0 ; i<4; i++){
-        trace += m(i,i) ;
-    }
-    return wrap( trace ) ;
-}
-
-// [[Rcpp::export]]
-CharacterVector character_matrix_indexing_lhs( CharacterVector m ){
-    for( size_t i=0 ; i<4; i++){
-        m(i,i) = "foo" ;
-    }
-    return m ;
-}
-
-// [[Rcpp::export]]
-CharacterVector character_matrix_row_iteration_incr( CharacterMatrix m ){
-    std::string pasted_row;
-    CharacterMatrix::Row row(m(1, _));
-    CharacterMatrix::Row::iterator i_row(row.begin());
-    for( size_t i=0 ; i<4; i++){
-        pasted_row += *i_row++;
-    }
-    return wrap( pasted_row ) ;
-}
-
-// [[Rcpp::export]]
-CharacterVector character_matrix_row_iteration_decr( CharacterMatrix m ){
-    std::string pasted_row;
-    CharacterMatrix::Row row(m(1, _));
-    CharacterMatrix::Row::iterator i_row(row.end());
-    i_row--; // Step back from 'one past the end' to 'last element'.
-    // Only copy the last three elements, to avoid creating an invalid
-    // 'one before the beginning' iterator:
-    for( size_t i=0 ; i<3; i++){
-        pasted_row += *i_row--;
-    }
-    return wrap( pasted_row ) ;
-}
-
-
-// [[Rcpp::export]]
-CharacterVector character_assign1(){
-    const char* x[] = { "foo", "bar", "bling", "boom" } ;
-    CharacterVector y ;
-    y.assign( x, x+4 ) ;
-    return y;
-}
-
-// [[Rcpp::export]]
-CharacterVector character_assign2(){
-    std::vector<std::string> vec(4) ;
-	vec[0] = "foo";
-	vec[1] = "bar";
-	vec[2] = "bling";
-	vec[3] = "boom" ;
-	CharacterVector y ;
-	y.assign( vec.begin(), vec.end() ) ;
-	return y;
 }
 
 // [[Rcpp::export]]

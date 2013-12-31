@@ -167,3 +167,47 @@ NumericMatrix runit_SubMatrix( ){
     return res;
 }
 
+
+// [[Rcpp::export]]
+CharacterVector character_matrix_indexing( CharacterMatrix m ){
+    std::string trace;
+    for( size_t i=0 ; i<4; i++){
+        trace += m(i,i) ;
+    }
+    return wrap( trace ) ;
+}
+
+// [[Rcpp::export]]
+CharacterVector character_matrix_indexing_lhs( CharacterMatrix m ){
+    for( size_t i=0 ; i<4; i++){
+        m(i,i) = "foo" ;
+    }
+    return m ;
+}
+
+// [[Rcpp::export]]
+CharacterVector character_matrix_row_iteration_incr( CharacterMatrix m ){
+    std::string pasted_row;
+    CharacterMatrix::Row row(m(1, _));
+    CharacterMatrix::Row::iterator i_row(row.begin());
+    for( size_t i=0 ; i<4; i++){
+        pasted_row += *i_row++;
+    }
+    return wrap( pasted_row ) ;
+}
+
+// [[Rcpp::export]]
+CharacterVector character_matrix_row_iteration_decr( CharacterMatrix m ){
+    std::string pasted_row;
+    CharacterMatrix::Row row(m(1, _));
+    CharacterMatrix::Row::iterator i_row(row.end());
+    i_row--; // Step back from 'one past the end' to 'last element'.
+    // Only copy the last three elements, to avoid creating an invalid
+    // 'one before the beginning' iterator:
+    for( size_t i=0 ; i<3; i++){
+        pasted_row += *i_row--;
+    }
+    return wrap( pasted_row ) ;
+}
+
+

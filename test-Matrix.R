@@ -87,3 +87,20 @@ test_that( "SubMatrix works", {
     expect_equal( runit_SubMatrix(), target)
 })
 
+test_that( "matrix indexing works", {
+    x <- matrix( as.character(1:16), ncol = 4 )
+    expect_equal( character_matrix_indexing(x), paste(diag(x), collapse = ""))
+
+    y <- as.vector( x )
+    expect_error( fun(y) )
+
+    expect_equal( diag(character_matrix_indexing_lhs(x)), rep("foo", 4) )
+})
+
+test_that( "Matrix::row works", {
+    x <- matrix(letters[1:16], nrow = 4)
+
+    expect_equal( character_matrix_row_iteration_incr(x), "bfjn")
+    expect_equal( character_matrix_row_iteration_decr(x), "njf")
+})
+
