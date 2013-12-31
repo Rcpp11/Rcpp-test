@@ -251,7 +251,7 @@ List countNamedArgs( NamedDots dots){
 }
 
 // [[Rcpp::export]]
-int test(void){
+int void_fun(void){
   return 2 ;  
 }
 
