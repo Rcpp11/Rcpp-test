@@ -86,19 +86,19 @@ test_that( "Reference works", {
     expect_equal( runit_Reference_getId(instrument), "AAPL" )
 })
 
-# test_that( "Vector can be constructed from Proxies", {
-# 	setClass("track", representation(x="numeric", y="numeric"), where = environment() )
-# 	setClass("trackCurve", representation(smooth = "numeric"), contains = "track", where = environment() )
-# 
-# 	tr1 <- new( "track", x = 2, y = 3 )
-# 	expect_equal( S4_get_slot_x(tr1), 2 )
-# 
-# 	x <- 1:10
-# 	attr( x, "foo" ) <- "bar"
-# 
-# 	expect_equal( S4_get_attr_x(x), "bar" )
-# 
-# })
+test_that( "Vector can be constructed from Proxies", {
+	setClass("track", representation(x="numeric", y="numeric"), where = environment() )
+	setClass("trackCurve", representation(smooth = "numeric"), contains = "track", where = environment() )
+
+	tr1 <- new( "track", x = 2, y = 3 )
+	expect_equal( S4_get_slot_x(tr1), 2 )
+
+	x <- 1:10
+	attr( x, "foo" ) <- "bar"
+
+	expect_equal( S4_get_attr_x(x), "bar" )
+
+})
 
 test_that( "NA is correctly handled", {
     expect_equal(
