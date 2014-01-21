@@ -271,13 +271,6 @@ test_that( "pmin and pmax work", {
 	) 
 })
 
-test_that( "Vector can be indexed by range", { 
-	expect_equal( runit_Range() , c( exp(seq_len(4)), exp(-seq_len(4))  ) )
-	
-	x <- rnorm(10)
-  expect_equal( runit_RangeIndexer(x), max(x[1:5]) )
-})
-
 test_that( "seq_len and seq_along work", {
 	expect_equal( runit_seqalong( rnorm(10)) , 1:10  )
 	expect_equal( runit_seqlen() , 1:10  )

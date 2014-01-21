@@ -270,14 +270,6 @@ List runit_pmax_one( NumericVector xx ){
 }
 
 // [[Rcpp::export]]
-NumericVector runit_Range(){
-    NumericVector xx(8) ;
-    xx[ Range(0,3) ] = exp( seq_len(4) ) ;
-    xx[ Range(4,7) ] = exp( - seq_len(4) ) ;
-    return xx ;
-}
-
-// [[Rcpp::export]]
 NumericVector runit_sapply( NumericVector xx ){
     NumericVector res = sapply( xx, square<double>() );
     return res ;
@@ -545,11 +537,6 @@ NumericVector runit_round( NumericVector xx, int d ){
 NumericVector runit_signif( NumericVector xx, int d ){
     NumericVector res = signif(xx, d);
     return res ;
-}
-
-// [[Rcpp::export]]
-double runit_RangeIndexer( NumericVector x ){
-    return max( x[ seq(0, 4) ] ) ;    
 }
 
 // [[Rcpp::export]]
