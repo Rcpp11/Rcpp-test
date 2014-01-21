@@ -214,17 +214,17 @@ bool S4_is_trackCurve(S4 tr){
     return tr.is("trackCurve") ;
 }
 
-// // [[Rcpp::export]]
-// NumericVector S4_get_slot_x(S4 o){
-//     NumericVector res( o.slot("x") );
-//     return res ;    
-// }
-// 
-// // [[Rcpp::export]]
-// CharacterVector S4_get_attr_x(IntegerVector o){
-//     CharacterVector res( o.attr("foo") ) ;
-//     return res ;
-// }
+// [[Rcpp::export]]
+NumericVector S4_get_slot_x(S4 o){
+    NumericVector res( o.slot("x") );
+    return res ;    
+}
+
+// [[Rcpp::export]]
+CharacterVector S4_get_attr_x(IntegerVector o){
+    CharacterVector res( o.attr("foo") ) ;
+    return res ;
+}
 
 // [[Rcpp::export]]
 S4 S4_dotdata(S4 foo){
