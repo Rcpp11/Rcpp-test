@@ -27,8 +27,7 @@ test_that( "Vector( int, init) works", {
 })
 
 test_that( "Vector(SEXP) works", {
-    vv = (0:9)*(1+1i) ## not working - funx changes its argument
-                                    #expect_equal( funx(vv), 2*vv)
+    vv = (0:9)*(1+1i)
     expect_equal( complex_CPLXSXP((0:9)*(1+1i)), 2*(0:9)*(1+1i))
     vv <- 0L:9L
     expect_equal( complex_INTSXP(vv), (2+0i)*vv)

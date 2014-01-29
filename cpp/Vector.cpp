@@ -63,8 +63,8 @@ ComplexVector complex_(){
     ComplexVector x(10) ;
     Rcomplex rc ;
     for( int i=0; i<10; i++) {
-    	rc.r = rc.i = i + 0.0 ;
-    	x[i] = rc ;
+        rc.r = rc.i = i + 0.0 ;
+        x[i] = rc ;
     }       
     return x ;
 }
@@ -82,10 +82,10 @@ ComplexVector complex_CPLXSXP( ComplexVector x ){
 // [[Rcpp::export]]
 ComplexVector complex_INTSXP( SEXP vec ){
     ComplexVector x(vec);
-        	int nn = x.size();
-        	IntegerVector tmp(nn, 2.0);
-    		ComplexVector tmp1(tmp);
-    		x = x * tmp1;
+    int nn = x.size();
+    IntegerVector tmp(nn, 2.0);
+    ComplexVector tmp1(tmp);
+    x = x * tmp1;
     return x ;
 }
 
