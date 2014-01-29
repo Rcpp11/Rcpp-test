@@ -116,21 +116,6 @@ IntegerVector integer_INTSXP(SEXP vec){
 }
 
 // [[Rcpp::export]]
-IntegerVector integer_dimension_ctor_1(){
-    return IntegerVector( Dimension( 5 ) ) ;
-}
-
-// [[Rcpp::export]]
-IntegerVector integer_dimension_ctor_2(){
-    return IntegerVector( Dimension( 5, 5 ) ) ;
-}
-
-// [[Rcpp::export]]
-IntegerVector integer_dimension_ctor_3(){
-    return IntegerVector( Dimension( 2, 3, 4) ) ;
-}
-
-// [[Rcpp::export]]
 IntegerVector integer_names_set(){
     IntegerVector y(2) ;
 	std::vector<std::string> names(2)  ;
@@ -290,21 +275,6 @@ List list_VECSXP_( SEXP vec){
 }
 
 // [[Rcpp::export]]
-List list_Dimension_constructor_1(){
-    return List( Dimension( 5 ) ) ;
-}
-
-// [[Rcpp::export]]
-List list_Dimension_constructor_2(){
-    return List( Dimension( 5, 5 ) );
-}
-
-// [[Rcpp::export]]
-List list_Dimension_constructor_3(){
-    return List( Dimension( 2, 3, 4) ) ;
-}
-
-// [[Rcpp::export]]
 List list_iterator_( List input, Function fun){
     List output( input.size() ) ;
     std::transform( input.begin(), input.end(), output.begin(), fun ) ;
@@ -395,21 +365,6 @@ CharacterVector character_plusequals(){
     x[0] += "bar" ;
     x[1] += x[0] ;
     return x ;
-}
-
-// [[Rcpp::export]]
-CharacterVector character_dimension_ctor1(){
-    return CharacterVector( Dimension( 5 ) ) ;
-}
-
-// [[Rcpp::export]]
-CharacterVector character_dimension_ctor2(){
-    return CharacterVector( Dimension( 5, 5 ) ) ;
-}
-
-// [[Rcpp::export]]
-CharacterVector character_dimension_ctor3(){
-    return CharacterVector( Dimension( 2, 3, 4) ) ;
 }
 
 // [[Rcpp::export]]

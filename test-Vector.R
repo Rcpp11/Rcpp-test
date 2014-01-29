@@ -40,38 +40,6 @@ test_that( "Vector(SEXP) works", {
     expect_equal( character_STRSXP_(letters), paste(letters,collapse="" ))
 })
 
-test_that( "Vector(Dimension) works", {
-    expect_equal(
-      integer_dimension_ctor_1(),
-      integer(5))
-
-    expect_equal(
-      integer_dimension_ctor_2(),
-      matrix( 0L, ncol = 5, nrow = 5) )
-
-    expect_equal(
-      integer_dimension_ctor_3(),
-      array( 0L, dim = c(2,3,4) ) )
-      
-    expect_equal(list_Dimension_constructor_1(),
-                rep(list(NULL),5))
-
-    expect_equal(list_Dimension_constructor_2(),
-                structure( rep( list(NULL), 25), dim = c(5,5) ) )
-                           
-    expect_equal(list_Dimension_constructor_3(),
-                array( rep(list(NULL)), dim = c(2,3,4) ))
-                
-    expect_equal(character_dimension_ctor1(),
-                character(5))
-
-    expect_equal(character_dimension_ctor2(),
-                matrix( "", ncol = 5, nrow = 5) )
-
-    expect_equal(character_dimension_ctor3(),
-                array( "", dim = c(2,3,4) ) )
-})
-
 test_that( "Expression vector proxies can be assigned symbols and calls", {
     ex <- parse( text = "rnorm; rnorm(10)" )
     attributes(ex) <- NULL
