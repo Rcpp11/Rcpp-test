@@ -155,20 +155,6 @@ NumericMatrix runit_NumericMatrix_rowsum( NumericMatrix input ){
 }
 
 // [[Rcpp::export]]
-NumericMatrix runit_SubMatrix( ){
-    NumericMatrix xx(4, 5);
-    xx(0,0) = 3;
-    xx(0,1) = 4;
-    xx(0,2) = 5;
-    xx(1,_) = xx(0,_);
-    xx(_,3) = xx(_,2);
-    SubMatrix<REALSXP> yy = xx( Range(0,2), Range(0,3) ) ;
-    NumericMatrix res = yy ;
-    return res;
-}
-
-
-// [[Rcpp::export]]
 CharacterVector character_matrix_indexing( CharacterMatrix m ){
     std::string trace;
     for( size_t i=0 ; i<4; i++){

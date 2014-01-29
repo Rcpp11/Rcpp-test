@@ -82,11 +82,6 @@ test_that( "Matrix rows work", {
     expect_equal( runit_NumericMatrix_rowsum( probs ), apply(probs,2,cumsum) )
 })
 
-test_that( "SubMatrix works", {
-    target <- rbind( c(3,4,5,5), c(3,4,5,5), 0 )
-    expect_equal( runit_SubMatrix(), target)
-})
-
 test_that( "matrix indexing works", {
     x <- matrix( as.character(1:16), ncol = 4 )
     expect_equal( character_matrix_indexing(x), paste(diag(x), collapse = ""))
