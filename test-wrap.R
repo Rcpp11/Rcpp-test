@@ -30,14 +30,6 @@ test_that( "wrap handles std::map", {
   expect_equal( map_int_double(), c("-1" = 3, "0" = 2 ) )    
   expect_equal( map_double_double(), c("0" = 2, "1.2" = 3 ) )    
   expect_equal( map_int_vector_double(), list("0" = c(1,2), "1" = c(2,3) ) )    
-  expect_equal(
-    sapply( map_int_Foo(), function(.) .$get() ), 
-    c("0" = 2, "1" = 3 )
-  )    
-  expect_equal( 
-    sapply( vector_Foo(), function(.) .$get() ), 
-    c(2, 3)
-  )    
 }) 
 
 test_that( "wrap handles multimap", {
