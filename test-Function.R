@@ -1,5 +1,5 @@
 context( "functions" )
-sourceCpp( "cpp/Function.cpp", env = environment() )
+sourceCpp( "cpp/Function.cpp" )
 
 test_that( "Function correctly handles R objects", {
     expect_equal( function_( ls ), ls)

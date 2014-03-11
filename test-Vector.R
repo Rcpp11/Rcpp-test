@@ -1,5 +1,5 @@
 context( "Vector" )
-sourceCpp( "cpp/Vector.cpp", env = environment() )
+sourceCpp( "cpp/Vector.cpp" )
 
 test_that( "Vector(int) constructor work", { 
     expect_equal( raw_(), as.raw(0:9))

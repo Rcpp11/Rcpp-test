@@ -1,5 +1,5 @@
 context( "environments" )
-sourceCpp( "cpp/Environment.cpp", env = environment() )
+sourceCpp( "cpp/Environment.cpp" )
 
 test_that( "Environment::ls() gives correct results", {
 	e <- new.env( )

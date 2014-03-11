@@ -1,5 +1,5 @@
 context( "String" )
-sourceCpp( "cpp/String.cpp", env = environment() )
+sourceCpp( "cpp/String.cpp" )
 
 test_that( "replace functions work", {
   expect_equal( String_replace_all("foobar", "o", "*"), "f**bar")
