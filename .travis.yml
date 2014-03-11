@@ -18,7 +18,7 @@ script:
   - R CMD INSTALL Rcpp11
   - R CMD INSTALL Rcpp98
   - Rscript -e "setwd('Rcpp-test'); library(methods); library(testthat); library(Rcpp11); test_dir('.')"
-  - Rscript -e "setwd('Rcpp-test'); library(methods); library(testthat); library(Rcpp98); test_dir('.')"
+  # - Rscript -e "setwd('Rcpp-test'); library(methods); library(testthat); library(Rcpp98); test_dir('.')"
   
 after_script:
   - ./travis-tool.sh dump_logs
