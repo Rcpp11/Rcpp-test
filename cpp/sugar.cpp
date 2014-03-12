@@ -236,10 +236,15 @@ List runit_plus_seqlen(){
 	    ) ;
 }
 
-// [[Rcpp::export]]
-LogicalVector runit_plus_all( IntegerVector xx ){
-    return all( (xx+xx) < 10 ) ;
-}
+// // [[Rcpp::export]]
+// LogicalVector runit_plus_all( IntegerVector xx ){
+//     return all( (xx+xx) < 10 ) ;
+// }
+// 
+// // [[Rcpp::export]]
+// LogicalVector runit_sapply_square( NumericVector xx){
+//     return all( sapply( xx * xx , square<double>() ) < 10.0 );
+// }
 
 // [[Rcpp::export]]
 NumericVector runit_pmin( NumericVector xx, NumericVector yy ){
@@ -279,11 +284,6 @@ NumericVector runit_sapply( NumericVector xx ){
 NumericVector runit_sapply_rawfun( NumericVector xx){
     NumericVector res = sapply( xx, raw_square );
     return res ;
-}
-
-// [[Rcpp::export]]
-LogicalVector runit_sapply_square( NumericVector xx){
-    return all( sapply( xx * xx , square<double>() ) < 10.0 );
 }
 
 // [[Rcpp::export]]
