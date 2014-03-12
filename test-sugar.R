@@ -344,38 +344,38 @@ test_that( "head and tail work", {
   	)
 })
 
-context( "sugar matrix")
-
-test_that( "outer works", {
-	x <- 1:2
-	y <- 1:5
-	expect_equal( runit_outer(x,y) , outer(x,y,"+") )
-})
-
-test_that( "row works", {
-	m <- matrix( 1:16, nc = 4 )
-	res <- runit_row( m )
-	target <- list( row = row(m), col = col(m) )
-	expect_equal( res, target )
-})
-
-test_that( "diag works", {
-	x <- 1:4
-	m <- matrix( 1:16, nc = 4 )
-	res <- runit_diag(x, m)
-	target <- list(
-		    diag(x),
-		    diag(m),
-		    diag( outer( x, x, "+" ) )
-		)
-	expect_equal( res, target )
-})
-
-test_that( "as_vector works", {
-    res <- runit_asvector( diag( 1:5 ), 1:4, 1:5 )
-    expect_equal( res[[1]], as.vector( diag(1:5) ) )
-    expect_equal( res[[2]], as.vector( outer( 1:4, 1:5, "+" ) ) )
-})
+# context( "sugar matrix")
+# 
+# test_that( "outer works", {
+# 	x <- 1:2
+# 	y <- 1:5
+# 	expect_equal( runit_outer(x,y) , outer(x,y,"+") )
+# })
+# 
+# test_that( "row works", {
+# 	m <- matrix( 1:16, nc = 4 )
+# 	res <- runit_row( m )
+# 	target <- list( row = row(m), col = col(m) )
+# 	expect_equal( res, target )
+# })
+# 
+# test_that( "diag works", {
+# 	x <- 1:4
+# 	m <- matrix( 1:16, nc = 4 )
+# 	res <- runit_diag(x, m)
+# 	target <- list(
+# 		    diag(x),
+# 		    diag(m),
+# 		    diag( outer( x, x, "+" ) )
+# 		)
+# 	expect_equal( res, target )
+# })
+# 
+# test_that( "as_vector works", {
+#     res <- runit_asvector( diag( 1:5 ), 1:4, 1:5 )
+#     expect_equal( res[[1]], as.vector( diag(1:5) ) )
+#     expect_equal( res[[2]], as.vector( outer( 1:4, 1:5, "+" ) ) )
+# })
 
 context( "sugar" )
 

@@ -391,19 +391,19 @@ IntegerVector runit_rev( IntegerVector xx ){
     return yy ;
 }
 
-// [[Rcpp::export]]
-NumericMatrix runit_outer( NumericVector xx, NumericVector yy){
-    NumericMatrix m = outer( xx, yy, std::plus<double>() ) ;
-    return m ;
-}
-
-// [[Rcpp::export]]
-List runit_row( NumericMatrix xx ){
-    return List::create(
-    	_["row"] = row( xx ),
-    	_["col"] = col( xx )
-    	 ) ;
-}
+// // [[Rcpp::export]]
+// NumericMatrix runit_outer( NumericVector xx, NumericVector yy){
+//     NumericMatrix m = outer( xx, yy, std::plus<double>() ) ;
+//     return m ;
+// }
+// 
+// // [[Rcpp::export]]
+// List runit_row( NumericMatrix xx ){
+//     return List::create(
+//     	_["row"] = row( xx ),
+//     	_["col"] = col( xx )
+//     	 ) ;
+// }
 
 // [[Rcpp::export]]
 List runit_head( NumericVector xx ){
@@ -421,14 +421,14 @@ List runit_tail( NumericVector xx ){
     ) ;
 }
 
-// [[Rcpp::export]]
-List runit_diag( NumericVector xx, NumericMatrix mm ){
-    return List::create(
-    	diag( xx ) ,
-    	diag( mm ),
-    	diag( outer( xx, xx, std::plus<double>() ) )
-    	) ;
-}
+// // [[Rcpp::export]]
+// List runit_diag( NumericVector xx, NumericMatrix mm ){
+//     return List::create(
+//     	diag( xx ) ,
+//     	diag( mm ),
+//     	diag( outer( xx, xx, std::plus<double>() ) )
+//     	) ;
+// }
 
 // [[Rcpp::export]]
 List runit_gamma( NumericVector xx ){
@@ -508,13 +508,13 @@ NumericVector runit_cumsum( NumericVector xx ){
     return res ;
 }
 
-// [[Rcpp::export]]
-List runit_asvector( NumericMatrix z, NumericVector x, NumericVector y){
-    return List::create(
-        as_vector( z ),
-        as_vector( outer( x , y , std::plus<double>() ) )
-    ) ;
-}
+// // [[Rcpp::export]]
+// List runit_asvector( NumericMatrix z, NumericVector x, NumericVector y){
+//     return List::create(
+//         as_vector( z ),
+//         as_vector( outer( x , y , std::plus<double>() ) )
+//     ) ;
+// }
 
 // [[Rcpp::export]]
 NumericVector runit_diff_REALSXP_NA( NumericVector x ){
