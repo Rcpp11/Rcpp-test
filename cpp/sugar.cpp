@@ -185,15 +185,20 @@ LogicalVector runit_isnan( NumericVector xx){
     return is_nan(xx) ;
 }
 
-// [[Rcpp::export]]
-LogicalVector runit_isna_isna( NumericVector xx ){
-    return is_na( is_na( xx ) ) ;
-}
-
-// [[Rcpp::export]]
-LogicalVector runit_any_isna( NumericVector xx){
-    return any( is_na( xx ) ) ;
-}
+// // [[Rcpp::export]]
+// LogicalVector runit_isna_isna( NumericVector xx ){
+//     return is_na( is_na( xx ) ) ;
+// }
+// 
+// // [[Rcpp::export]]
+// LogicalVector runit_any_isna( NumericVector xx){
+//     return any( is_na( xx ) ) ;
+// }
+// 
+// // [[Rcpp::export]]
+// LogicalVector runit_any_equal_not( NumericVector xx, NumericVector yy){
+//     return any( !( xx == yy) ) ;
+// }
 
 // [[Rcpp::export]]
 List runit_lapply( IntegerVector xx){
@@ -210,11 +215,6 @@ List runit_minus( IntegerVector xx ){
     	noNA( xx ) - 10,
     	10 - noNA( xx )
     	) ;
-}
-
-// [[Rcpp::export]]
-LogicalVector runit_any_equal_not( NumericVector xx, NumericVector yy){
-    return any( !( xx == yy) ) ;
 }
 
 // [[Rcpp::export]]
