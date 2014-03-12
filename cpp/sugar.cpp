@@ -14,95 +14,95 @@ List runit_abs( NumericVector xx, IntegerVector yy ){
     return List::create( abs(xx), abs(yy) ) ;
 }
 
-// [[Rcpp::export]]
-LogicalVector runit_all_one_less( NumericVector xx ){
-    return all( xx < 5.0 ) ;
-}
-
-// [[Rcpp::export]]
-LogicalVector runit_all_one_greater( NumericVector xx ){
-    return all( xx > 5.0 ) ;
-}
-
-// [[Rcpp::export]]
-LogicalVector runit_all_one_less_or_equal( NumericVector xx ){
-    return all( xx <= 5.0 ) ;
-}
-
-// [[Rcpp::export]]
-LogicalVector runit_all_one_greater_or_equal( NumericVector xx ){
-    return all( xx >= 5.0 ) ;
-}
-
-// [[Rcpp::export]]
-LogicalVector runit_all_one_equal( NumericVector xx ){
-    return all( xx == 5.0 ) ;
-}
-
-// [[Rcpp::export]]
-LogicalVector runit_all_not_equal_one( NumericVector xx ){
-    return all( xx != 5.0 ) ;
-}
-
-// [[Rcpp::export]]
-LogicalVector runit_all_less( NumericVector xx, NumericVector yy){
-    return all( xx < yy ) ;
-}
-
-// [[Rcpp::export]]
-LogicalVector runit_all_greater( NumericVector xx, NumericVector yy ){
-    return all( xx > yy ) ;
-}
-
-// [[Rcpp::export]]
-LogicalVector runit_all_less_or_equal( NumericVector xx, NumericVector yy){
-    return all( xx <= yy ) ;
-}
-
-// [[Rcpp::export]]
-LogicalVector runit_all_greater_or_equal( NumericVector xx, NumericVector yy){
-    return all( xx >= yy ) ;
-}
-
-// [[Rcpp::export]]
-LogicalVector runit_all_equal( NumericVector xx, NumericVector yy){
-    return all( xx == yy ) ;
-}
-
-// [[Rcpp::export]]
-LogicalVector runit_all_not_equal( NumericVector xx, NumericVector yy){
-    return all( xx != yy ) ;
-}
-
-// [[Rcpp::export]]
-LogicalVector runit_any_less( NumericVector xx, NumericVector yy){
-    return any( xx < yy ) ;
-}
-
-// [[Rcpp::export]]
-LogicalVector runit_any_greater( NumericVector xx, NumericVector yy ){
-    return any( xx > yy ) ;
-}
-
-// [[Rcpp::export]]
-LogicalVector runit_any_less_or_equal( NumericVector xx, NumericVector yy ){
-    return any( xx <= yy ) ;
-}
-
-// [[Rcpp::export]]
-LogicalVector runit_any_greater_or_equal( NumericVector xx, NumericVector yy){
-    return any( xx >= yy ) ;
-}
-
-// [[Rcpp::export]]
-LogicalVector runit_any_equal( NumericVector xx, NumericVector yy){
-    return any( xx == yy ) ;
-}
-
-// [[Rcpp::export]]
-LogicalVector runit_any_not_equal( NumericVector xx, NumericVector yy){
-    return any( xx != yy ) ;
-}
+// // [[Rcpp::export]]
+// LogicalVector runit_all_one_less( NumericVector xx ){
+//     return all( xx < 5.0 ) ;
+// }
+// 
+// // [[Rcpp::export]]
+// LogicalVector runit_all_one_greater( NumericVector xx ){
+//     return all( xx > 5.0 ) ;
+// }
+// 
+// // [[Rcpp::export]]
+// LogicalVector runit_all_one_less_or_equal( NumericVector xx ){
+//     return all( xx <= 5.0 ) ;
+// }
+// 
+// // [[Rcpp::export]]
+// LogicalVector runit_all_one_greater_or_equal( NumericVector xx ){
+//     return all( xx >= 5.0 ) ;
+// }
+// 
+// // [[Rcpp::export]]
+// LogicalVector runit_all_one_equal( NumericVector xx ){
+//     return all( xx == 5.0 ) ;
+// }
+// 
+// // [[Rcpp::export]]
+// LogicalVector runit_all_not_equal_one( NumericVector xx ){
+//     return all( xx != 5.0 ) ;
+// }
+// 
+// // [[Rcpp::export]]
+// LogicalVector runit_all_less( NumericVector xx, NumericVector yy){
+//     return all( xx < yy ) ;
+// }
+// 
+// // [[Rcpp::export]]
+// LogicalVector runit_all_greater( NumericVector xx, NumericVector yy ){
+//     return all( xx > yy ) ;
+// }
+// 
+// // [[Rcpp::export]]
+// LogicalVector runit_all_less_or_equal( NumericVector xx, NumericVector yy){
+//     return all( xx <= yy ) ;
+// }
+// 
+// // [[Rcpp::export]]
+// LogicalVector runit_all_greater_or_equal( NumericVector xx, NumericVector yy){
+//     return all( xx >= yy ) ;
+// }
+// 
+// // [[Rcpp::export]]
+// LogicalVector runit_all_equal( NumericVector xx, NumericVector yy){
+//     return all( xx == yy ) ;
+// }
+// 
+// // [[Rcpp::export]]
+// LogicalVector runit_all_not_equal( NumericVector xx, NumericVector yy){
+//     return all( xx != yy ) ;
+// }
+// 
+// // [[Rcpp::export]]
+// LogicalVector runit_any_less( NumericVector xx, NumericVector yy){
+//     return any( xx < yy ) ;
+// }
+// 
+// // [[Rcpp::export]]
+// LogicalVector runit_any_greater( NumericVector xx, NumericVector yy ){
+//     return any( xx > yy ) ;
+// }
+// 
+// // [[Rcpp::export]]
+// LogicalVector runit_any_less_or_equal( NumericVector xx, NumericVector yy ){
+//     return any( xx <= yy ) ;
+// }
+// 
+// // [[Rcpp::export]]
+// LogicalVector runit_any_greater_or_equal( NumericVector xx, NumericVector yy){
+//     return any( xx >= yy ) ;
+// }
+// 
+// // [[Rcpp::export]]
+// LogicalVector runit_any_equal( NumericVector xx, NumericVector yy){
+//     return any( xx == yy ) ;
+// }
+// 
+// // [[Rcpp::export]]
+// LogicalVector runit_any_not_equal( NumericVector xx, NumericVector yy){
+//     return any( xx != yy ) ;
+// }
 
 // [[Rcpp::export]]
 LogicalVector runit_constructor( NumericVector xx, NumericVector yy ){
