@@ -29,13 +29,8 @@ List matrix_generic( GenericMatrix m){
 }
 
 // [[Rcpp::export]]
-NumericMatrix matrix_numeric_ctor1(){
-    return NumericMatrix(3);
-}
-
-// [[Rcpp::export]]
 NumericMatrix matrix_numeric_ctor2(){
-    return NumericMatrix(3,3);
+    return NumericMatrix(3,3,0.0);
 }
 
 // [[Rcpp::export]]

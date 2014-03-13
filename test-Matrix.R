@@ -48,7 +48,6 @@ test_that( "Matrix handles primitive types", {
 
 test_that( "Matrix creates a matrix from a number of rows and columns", {
 	x <- matrix(0, 3, 3)
-	expect_equal( matrix_numeric_ctor1(), x)
 	expect_equal( matrix_numeric_ctor2(), x)
 })
 
