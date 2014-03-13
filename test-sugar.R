@@ -358,18 +358,18 @@ test_that( "outer works", {
 # 	target <- list( row = row(m), col = col(m) )
 # 	expect_equal( res, target )
 # })
-# 
-# test_that( "diag works", {
-# 	x <- 1:4
-# 	m <- matrix( 1:16, nc = 4 )
-# 	res <- runit_diag(x, m)
-# 	target <- list(
-# 		    diag(x),
-# 		    diag(m),
-# 		    diag( outer( x, x, "+" ) )
-# 		)
-# 	expect_equal( res, target )
-# })
+
+test_that( "diag works", {
+	x <- 1:4
+	m <- matrix( 1:16, nc = 4 )
+	res <- runit_diag(x, m)
+	target <- list(
+		    diag(x),
+		    diag(m),
+		    diag( outer( x, x, "+" ) )
+		)
+	expect_equal( res, target )
+})
 
 context( "sugar" )
 

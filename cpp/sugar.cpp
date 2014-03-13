@@ -421,14 +421,14 @@ List runit_tail( NumericVector xx ){
     ) ;
 }
 
-// // [[Rcpp::export]]
-// List runit_diag( NumericVector xx, NumericMatrix mm ){
-//     return List::create(
-//     	diag( xx ) ,
-//     	diag( mm ),
-//     	diag( outer( xx, xx, std::plus<double>() ) )
-//     	) ;
-// }
+// [[Rcpp::export]]
+List runit_diag( NumericVector xx, NumericMatrix mm ){
+    return List::create(
+    	diag( xx ) ,
+    	diag( mm ),
+    	diag( outer( xx, xx, std::plus<double>() ) )
+    	) ;
+}
 
 // [[Rcpp::export]]
 List runit_gamma( NumericVector xx ){
