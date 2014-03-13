@@ -164,7 +164,7 @@ CharacterVector character_matrix_indexing( CharacterMatrix m ){
 }
 
 // [[Rcpp::export]]
-CharacterVector character_matrix_indexing_lhs( CharacterMatrix m ){
+CharacterMatrix character_matrix_indexing_lhs( CharacterMatrix m ){
     for( size_t i=0 ; i<4; i++){
         m(i,i) = "foo" ;
     }
