@@ -391,12 +391,12 @@ IntegerVector runit_rev( IntegerVector xx ){
     return yy ;
 }
 
-// // [[Rcpp::export]]
-// NumericMatrix runit_outer( NumericVector xx, NumericVector yy){
-//     NumericMatrix m = outer( xx, yy, std::plus<double>() ) ;
-//     return m ;
-// }
-// 
+// [[Rcpp::export]]
+NumericMatrix runit_outer( NumericVector xx, NumericVector yy){
+    NumericMatrix m = outer( xx, yy, std::plus<double>() ) ;
+    return m ;
+}
+
 // // [[Rcpp::export]]
 // List runit_row( NumericMatrix xx ){
 //     return List::create(

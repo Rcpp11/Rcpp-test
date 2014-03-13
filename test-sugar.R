@@ -344,14 +344,14 @@ test_that( "head and tail work", {
   	)
 })
 
-# context( "sugar matrix")
-# 
-# test_that( "outer works", {
-# 	x <- 1:2
-# 	y <- 1:5
-# 	expect_equal( runit_outer(x,y) , outer(x,y,"+") )
-# })
-# 
+context( "sugar matrix")
+
+test_that( "outer works", {
+	x <- 1:2
+	y <- 1:5
+	expect_equal( runit_outer(x,y) , outer(x,y,"+") )
+})
+ 
 # test_that( "row works", {
 # 	m <- matrix( 1:16, nc = 4 )
 # 	res <- runit_row( m )
