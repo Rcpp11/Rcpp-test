@@ -352,12 +352,12 @@ test_that( "outer works", {
 	expect_equal( runit_outer(x,y) , outer(x,y,"+") )
 })
  
-# test_that( "row works", {
-# 	m <- matrix( 1:16, nc = 4 )
-# 	res <- runit_row( m )
-# 	target <- list( row = row(m), col = col(m) )
-# 	expect_equal( res, target )
-# })
+test_that( "row works", {
+	m <- matrix( 1:16, nc = 4 )
+	res <- runit_row( m )
+	target <- list( row = row(m), col = col(m) )
+	expect_equal( res, target )
+})
 
 test_that( "diag works", {
 	x <- 1:4

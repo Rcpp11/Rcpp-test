@@ -397,13 +397,13 @@ NumericMatrix runit_outer( NumericVector xx, NumericVector yy){
     return m ;
 }
 
-// // [[Rcpp::export]]
-// List runit_row( NumericMatrix xx ){
-//     return List::create(
-//     	_["row"] = row( xx ),
-//     	_["col"] = col( xx )
-//     	 ) ;
-// }
+// [[Rcpp::export]]
+List runit_row( NumericMatrix xx ){
+    return List::create(
+    	_["row"] = row( xx ),
+    	_["col"] = col( xx )
+    	 ) ;
+}
 
 // [[Rcpp::export]]
 List runit_head( NumericVector xx ){
