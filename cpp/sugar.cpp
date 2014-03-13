@@ -508,14 +508,6 @@ NumericVector runit_cumsum( NumericVector xx ){
     return res ;
 }
 
-// // [[Rcpp::export]]
-// List runit_asvector( NumericMatrix z, NumericVector x, NumericVector y){
-//     return List::create(
-//         as_vector( z ),
-//         as_vector( outer( x , y , std::plus<double>() ) )
-//     ) ;
-// }
-
 // [[Rcpp::export]]
 NumericVector runit_diff_REALSXP_NA( NumericVector x ){
     NumericVector res= diff(x) ;

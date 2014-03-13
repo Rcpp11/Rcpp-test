@@ -370,12 +370,6 @@ test_that( "head and tail work", {
 # 		)
 # 	expect_equal( res, target )
 # })
-# 
-# test_that( "as_vector works", {
-#     res <- runit_asvector( diag( 1:5 ), 1:4, 1:5 )
-#     expect_equal( res[[1]], as.vector( diag(1:5) ) )
-#     expect_equal( res[[2]], as.vector( outer( 1:4, 1:5, "+" ) ) )
-# })
 
 context( "sugar" )
 
