@@ -457,9 +457,6 @@ test_that( "rounding functions work", {
 })
 
 test_that( "matching functions work", {
-    x <- sample( letters, 1000, replace = TRUE )
-    expect_equal( runit_self_match(x), match(x,unique(x)) )
-
     expect_true( all( runit_table(x) == table(x) ) )
     expect_true( all( names(runit_table(x)) == names(table(x)) ) )
     expect_equal( runit_duplicated(x), duplicated(x) )

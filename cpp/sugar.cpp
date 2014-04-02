@@ -532,11 +532,6 @@ NumericVector runit_signif( NumericVector xx, int d ){
 }
 
 // [[Rcpp::export]]
-IntegerVector runit_self_match( CharacterVector x){
-    return self_match( x ) ;
-}
-
-// [[Rcpp::export]]
 IntegerVector runit_table( CharacterVector x){
     return table( x ) ;
 }
