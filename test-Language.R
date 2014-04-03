@@ -32,24 +32,6 @@ test_that( "Language can evaluate", {
 	expect_equal( runit_lang_inenv(e), sum(1:10))
 })
 
-test_that( "Language can be wraped as unary_call, fixed_call, and binary_call", {
-	expect_equal(
-		runit_lang_unarycall( 1:10 ),
-		lapply( 1:10, function(n) seq(from=n, to = 0 ) ) 
-	)
-	expect_equal(
-		runit_lang_unarycallindex( 1:10 ),
-		lapply( 1:10, function(n) seq(from=10, to = n )) )
-	expect_equal(
-		runit_lang_binarycall( 1:10, 11:20 ),
-		lapply( 1:10, function(n) seq(n, n+10) ) )
-	set.seed(123)
-	res <- runit_lang_fixedcall()
-	set.seed(123)
-	exp <- lapply( 1:10, function(n) rnorm(10) )
-	expect_equal( res, exp)
-})
-
 context( "Pairlist" )
 
 test_that( "Pairlist handles R objects", {

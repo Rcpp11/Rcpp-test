@@ -19,10 +19,6 @@ test_that( ".row and .column works in several places", {
 	m <- matrix( letters, ncol = 2 )
 	expect_equal( runit_CharacterMatrix_row(m), paste( m[1,], collapse = "" ))
 
-	m <- lapply( 1:16, function(i) seq(from=1, to = i ) )
-	dim( m ) <- c( 4, 4 )
-	expect_equal( runit_GenericMatrix_row( m ), 1 + 0:3*4)
-
 	x <- matrix( 1:16 + .5, ncol = 4 )
 	expect_equal( runit_NumericMatrix_column( x ), sum( x[,1] ) )
 })
@@ -68,13 +64,9 @@ test_that( "Matrix columns work", {
 	m <- matrix( letters, ncol = 2 )
 	expect_equal( runit_CharacterMatrix_column(m), paste( m[,1], collapse = "" ))
 
-	m <- lapply( 1:16, function(i) seq(from=1, to = i ) )
-	dim( m ) <- c( 4, 4 )
-	expect_equal( runit_GenericMatrix_column( m ), 1:4)
-
 	probs <- matrix(1:12,nrow=3)
-    expect_equal( runit_NumericMatrix_colsum( probs ), t(apply(probs,1,cumsum)) )
-} )
+  expect_equal( runit_NumericMatrix_colsum( probs ), t(apply(probs,1,cumsum)) )
+})
 
 test_that( "Matrix rows work", {
     probs <- matrix(1:12,nrow=3)
