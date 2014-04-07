@@ -47,18 +47,6 @@ ExpressionVector expression_parseerror(){
 }
 
 // [[Rcpp::export]]
-SEXP expression_eval(){
-    ExpressionVector code( "local( { y <- sample(1:10); sort(y) })" ) ;
-    return code.eval() ;
-}
-
-// [[Rcpp::export]]
-SEXP expression_evalenv( Environment env){
-    ExpressionVector code( "sort(x)" ) ;
-    return code.eval(env) ;
-}
-
-// [[Rcpp::export]]
 ComplexVector complex_(){
     ComplexVector x(10) ;
     Rcomplex rc ;

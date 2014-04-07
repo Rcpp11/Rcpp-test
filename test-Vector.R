@@ -52,14 +52,6 @@ test_that( "ExpressionVector can parse", {
     expect_error( expression_parseerror())
 })
 
-test_that( "ExpressionVector can eval", {
-    expect_equal( expression_eval(), 1:10)
-    
-    e <- new.env()
-    e[["x"]] <- sample(1:10)
-    expect_equal( expression_evalenv(e), 1:10)
-})
-
 test_that( "Vector supports names", { 
     expect_equal(names(integer_names_set()), c("foo", "bar"))
     expect_equal(
