@@ -124,12 +124,6 @@ int integer_names_indexing( IntegerVector y ){
 }
 
 // [[Rcpp::export]]
-IntegerVector integer_fill( IntegerVector y ){
-    y.fill(10) ;
-    return y ;
-}
-
-// [[Rcpp::export]]
 IntegerVector integer_zero(){
     return IntegerVector(0);
 }

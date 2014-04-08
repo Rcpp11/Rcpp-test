@@ -40,8 +40,9 @@ private:
 
 // [[Rcpp::export]]
 CharacterVector test_sapply_string( CharacterVector text, CharacterVector old , CharacterVector new_){
-   CharacterVector res = sapply( text, StringConv( old, new_ ) ) ;
-   return res ;
+    StringConv conv( old, new_ );
+    CharacterVector res = sapply( text, conv  ) ;
+    return res ;
 }  
 
 // [[Rcpp::export]]
