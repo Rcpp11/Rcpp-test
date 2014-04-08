@@ -124,71 +124,6 @@ int integer_names_indexing( IntegerVector y ){
 }
 
 // [[Rcpp::export]]
-IntegerVector integer_push_back( IntegerVector y ){
-    y.push_back( 5 ) ;
-    return y ;
-}
-
-// [[Rcpp::export]]
-IntegerVector integer_push_front( IntegerVector y ){
-    y.push_front( 5 ) ;
-    return y ;
-}
-
-// [[Rcpp::export]]
-IntegerVector integer_insert( IntegerVector y){
-    y.insert( 0, 5 ) ;
-    y.insert( 2, 7 ) ;
-    return y ;
-}
-
-// [[Rcpp::export]]
-IntegerVector integer_erase( IntegerVector y ){
-    y.erase(2) ;
-    return y ;
-}
-
-// [[Rcpp::export]]
-List integer_erase_range( IntegerVector x, IntegerVector y ){
-    x.erase(x.begin()+5, x.end()-1 );
-    y.erase(y.begin()+5, y.end()-1 );
-    return List::create( x, y ) ;
-}
-
-// [[Rcpp::export]]
-List integer_erase_range_2( IntegerVector x, IntegerVector y ){
-    IntegerVector::iterator it = x.begin()+1 ;
-    while( it != x.end() ){
-        it = x.erase(it) ;    
-    }
-    it = y.begin() + 1 ;
-    while( it != y.end() ){
-        it = y.erase(it) ;    
-    }
-    return List::create( x, y ) ;
-}
-
-// [[Rcpp::export]]
-List List_erase_range_2( List x, List y ){
-    List::iterator it = x.begin()+1 ;
-    while( it != x.end() ){
-        it = x.erase(it) ;    
-    }
-    it = y.begin() + 1 ;
-    while( it != y.end() ){
-        it = y.erase(it) ;    
-    }
-    return List::create( x, y ) ;
-}
-
-
-// [[Rcpp::export]]
-IntegerVector integer_erase2( IntegerVector y ){
-    y.erase(1,2) ;
-    return y ;
-}
-
-// [[Rcpp::export]]
 IntegerVector integer_fill( IntegerVector y ){
     y.fill(10) ;
     return y ;
@@ -275,32 +210,6 @@ int list_name_indexing( List df ){
     IntegerVector df_x = df["x"] ;
     int res = std::accumulate( df_x.begin(), df_x.end(), 0 ) ;
     return res ;
-}
-
-// [[Rcpp::export]]
-List list_push_back(List list){
-    list.push_back( 10 ) ;
-    list.push_back( "bar", "foo" ) ;
-    return list ;
-}
-
-// [[Rcpp::export]]
-List list_push_front( List list ){
-    list.push_front( 10 ) ;
-    list.push_front( "bar", "foo" ) ;
-    return list ;
-}
-
-// [[Rcpp::export]]
-List list_erase( List list ){
-    list.erase( list.begin() ) ;
-    return list ;
-}
-
-// [[Rcpp::export]]
-List list_erase_range( List list ){
-    list.erase( 0, 2 ) ;
-    return list ;
 }
 
 // [[Rcpp::export]]
