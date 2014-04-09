@@ -14,10 +14,10 @@ before_install:
     
 script:
   - cd ..
-  - git clone https://github.com/romainfrancois/Rcpp11.git
-  - git clone https://github.com/romainfrancois/Rcpp98.git
+  - git clone https://github.com/Rcpp11/Rcpp11.git
+  # - git clone https://github.com/romainfrancois/Rcpp98.git
   - R CMD INSTALL Rcpp11
-  - R CMD INSTALL Rcpp98
+  # - R CMD INSTALL Rcpp98
   - Rscript -e "setwd('Rcpp-test'); library(methods); library(testthat); library(Rcpp11); test_dir('.')"
   # - Rscript -e "setwd('Rcpp-test'); library(methods); library(testthat); library(Rcpp98); test_dir('.')"
   
