@@ -1,5 +1,5 @@
 context("NA")
-attributes::sourceCpp("cpp/na.cpp")
+
 
 test_that("NA values are handled correctly", {
   expect_true( Rcpp_IsNA(NA_real_) )

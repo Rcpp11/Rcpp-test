@@ -1,5 +1,5 @@
 context( "Rcpp API" )
-sourceCpp( "cpp/misc.cpp" )
+
 
 test_that( "Symbol correctly handles various SEXP", {
 	res <- symbol_()
@@ -133,7 +133,7 @@ test_that( "... is correctly handled", {
   
 })
 
-test_that( "void can be used as function parameter", {
-  expect_equal( void_fun(), 2L )
-})
-
+# test_that( "void can be used as function parameter", {
+#   expect_equal( void_fun(), 2L )
+# })
+# 

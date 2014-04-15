@@ -1,5 +1,5 @@
 context( "Matrix" )
-sourceCpp( "cpp/Matrix.cpp" )
+
 
 test_that( ".row and .column works in several places", {
 	x <- matrix( 1:16+.5, nc = 4 )

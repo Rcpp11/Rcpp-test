@@ -4,11 +4,11 @@ Version: 3.1.0.0.999
 Date: 2014-04-10
 Authors@R: c(
     person("Romain", "Francois", role = c("aut", "cre"), email = "romain@r-enthusiasts.com"),
-    person("Kevin", "Ushey", role = "aut", email = "kevinushey@gmail.com"),
-    person("John", "Chambers", role = "ctb", email = "jmc@r-project.org")
+    person("Kevin", "Ushey", role = "aut", email = "kevinushey@gmail.com")
     )
 Description: R and C++11
 Depends: R (>= 3.1.0)
+LinkingTo: Rcpp11
 License: MIT + file LICENSE
 SystemRequirements: C++11
 
