@@ -75,7 +75,7 @@ double runit_NumericMatrix_column( NumericMatrix m ){
 NumericMatrix runit_NumericMatrix_cumsum( NumericMatrix input ){
     int nr = input.nrow(), nc = input.ncol() ;
     NumericMatrix output(nr, nc) ;
-    NumericVector tmp( nr );
+    NumericVector tmp( nr, 0 );
     for( int i=0; i<nc; i++){
         tmp = tmp + input.column(i) ;
         NumericMatrix::Column target( output, i ) ;
