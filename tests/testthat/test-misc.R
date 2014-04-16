@@ -87,8 +87,8 @@ test_that( "Reference works", {
 })
 
 test_that( "Vector can be constructed from Proxies", {
-	setClass("track", representation(x="numeric", y="numeric"), where = environment() )
-	setClass("trackCurve", representation(smooth = "numeric"), contains = "track", where = environment() )
+	suppressWarnings( setClass("track", representation(x="numeric", y="numeric"), where = environment() )                    )
+	suppressWarnings( setClass("trackCurve", representation(smooth = "numeric"), contains = "track", where = environment() ) )
 
 	tr1 <- new( "track", x = 2, y = 3 )
 	expect_equal( S4_get_slot_x(tr1), 2 )

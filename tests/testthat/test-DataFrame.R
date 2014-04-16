@@ -30,7 +30,7 @@ test_that( "DataFrame::create works", {
 })
 
 test_that( "DataFrame can be created from proxies", {
-    setClass("track", representation(x="data.frame", y = "function"), where = environment())
+    suppressWarnings( setClass("track", representation(x="data.frame", y = "function"), where = environment()) )
     df <- data.frame( x = 1:10, y = 1:10 )
     tr1 <- new( "track", x = df, y = rnorm )
     expect_true( identical( SlotProxy(tr1, "x"), df ))
