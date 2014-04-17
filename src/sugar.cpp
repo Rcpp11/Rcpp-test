@@ -470,7 +470,6 @@ List runit_beta( NumericVector nn, NumericVector kk){
     	_["VP"] = beta(nn, 5.0 )
     	) ;
 }
-
 // [[Rcpp::export]]
 List runit_psigamma( NumericVector nn, NumericVector kk){
     return List::create(
@@ -499,6 +498,11 @@ List runit_log1p( NumericVector xx){
 
 // [[Rcpp::export]]
 double runit_sum( NumericVector xx){
+    return sum( xx ) ;
+}
+
+// [[Rcpp::export]]
+Rcomplex runit_sum_cplx( ComplexVector xx){
     return sum( xx ) ;
 }
 

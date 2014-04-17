@@ -74,11 +74,11 @@ test_that( "StrechyList correctly builds pairlists", {
 })
 
 test_that( "Reference works", {
-    Instrument <- setRefClass(
+    Instrument <- suppressWarnings(setRefClass(
        Class="Instrument",
        fields=list("id"="character", "description"="character"), 
        where = environment()
-    )
+    ))
     Instrument$accessors(c("id", "description"))
     
     instrument <- Instrument$new(id="AAPL", description="Apple")

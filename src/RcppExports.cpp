@@ -4449,6 +4449,22 @@ BEGIN_RCPP
     return __sexp_result;
 END_RCPP
 }
+// runit_sum_cplx
+Rcomplex runit_sum_cplx(ComplexVector xx);
+extern "C"  SEXP RcppTest_runit_sum_cplx(SEXP xxSEXP) {
+BEGIN_RCPP
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        Rcpp::traits::input_parameter< ComplexVector >::type xx(xxSEXP );
+        Rcomplex __result = runit_sum_cplx(xx);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
+END_RCPP
+}
+
 // runit_cumsum
 NumericVector runit_cumsum(NumericVector xx);
 extern "C"  SEXP RcppTest_runit_cumsum(SEXP xxSEXP) {

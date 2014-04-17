@@ -1157,6 +1157,10 @@ runit_sum <- function(xx) {
     .Call('RcppTest_runit_sum', PACKAGE = 'RcppTest', xx)
 }
 
+runit_sum_cplx <- function(xx) {
+    .Call('RcppTest_runit_sum_cplx', PACKAGE = 'RcppTest', xx)
+}
+
 runit_cumsum <- function(xx) {
     .Call('RcppTest_runit_cumsum', PACKAGE = 'RcppTest', xx)
 }

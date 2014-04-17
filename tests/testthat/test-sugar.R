@@ -436,6 +436,10 @@ test_that("sugar sum functions work", {
     expect_equal( runit_cumsum(x), cumsum(x) )
     x[4] <- NA
     expect_equal( runit_cumsum(x), cumsum(x) )
+    
+    y <- rnorm(10) + rnorm(10)*1i
+    expect_equal( runit_sum_cplx(y), sum(y) )
+    
 })
 
 test_that( "rounding functions work", {
