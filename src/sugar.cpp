@@ -507,6 +507,11 @@ Rcomplex runit_sum_cplx( ComplexVector xx){
 }
 
 // [[Rcpp::export]]
+Rcomplex runit_mean_cplx( ComplexVector xx){
+    return mean( xx ) ;
+}
+
+// [[Rcpp::export]]
 NumericVector runit_cumsum( NumericVector xx ){
     NumericVector res = cumsum( xx ) ;
     return res ;

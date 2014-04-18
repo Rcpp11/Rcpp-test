@@ -439,6 +439,7 @@ test_that("sugar sum functions work", {
     
     y <- rnorm(10) + rnorm(10)*1i
     expect_equal( runit_sum_cplx(y), sum(y) )
+    expect_equal( runit_mean_cplx(y), mean(y) )
     
 })
 
