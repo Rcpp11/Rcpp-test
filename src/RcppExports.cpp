@@ -336,6 +336,21 @@ BEGIN_RCPP
     return __sexp_result;
 END_RCPP
 }
+// DataFrame_proxies
+DataFrame DataFrame_proxies(DataFrame df);
+extern "C"  SEXP RcppTest_DataFrame_proxies(SEXP dfSEXP) {
+BEGIN_RCPP
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        Rcpp::traits::input_parameter< DataFrame >::type df(dfSEXP );
+        DataFrame __result = DataFrame_proxies(df);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
+END_RCPP
+}
 // runit_ls
 SEXP runit_ls(Environment env);
 extern "C"  SEXP RcppTest_runit_ls(SEXP envSEXP) {

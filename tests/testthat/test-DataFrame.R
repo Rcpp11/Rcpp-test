@@ -46,3 +46,15 @@ test_that( "DataFrame::nrows give the correct number of rows",{
     expect_equal( DataFrame_nrows( df ), nrow(df) )
 })
 
+test_that("DataFrame proxies dont create corrupt data frames", {
+  df <- data.frame( x = rnorm(5), y = rnorm(5), z = rnorm(5) )
+  df <- DataFrame_proxies(df)
+  
+  expect_equal(names(df), c("x", "y", "z", "x3", "x4" ) )
+  expect_equal(df[[1]], 1:5)
+  expect_equal(df[[2]], rep(3L, 5) )
+  expect_equal(df[["z"]], rep(2L, 5) )
+  expect_equal(df[["x3"]], 1:5 )
+  expect_equal(df[["x4"]], rep(2.0,5) )
+  
+})

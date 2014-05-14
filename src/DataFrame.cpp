@@ -68,3 +68,15 @@ int DataFrame_nrows( DataFrame df){
     return df.nrows() ;
 }
 
+// [[Rcpp::export]]
+DataFrame DataFrame_proxies( DataFrame df){
+    df[0] = seq(1, df.nrows() ) ;
+    df[1] = 3 ;
+
+    df["z"]  = rep(2, 5) ;
+    df["x3"] = seq(1, df.nrows() ) ;
+    df["x4"] = 2.0 ;
+    return df ;
+}
+
+
