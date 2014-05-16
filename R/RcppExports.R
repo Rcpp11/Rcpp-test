@@ -89,6 +89,10 @@ DataFrame_nrows <- function(df) {
     .Call('RcppTest_DataFrame_nrows', PACKAGE = 'RcppTest', df)
 }
 
+DataFrame_proxies <- function(df) {
+    .Call('RcppTest_DataFrame_proxies', PACKAGE = 'RcppTest', df)
+}
+
 runit_ls <- function(env) {
     .Call('RcppTest_runit_ls', PACKAGE = 'RcppTest', env)
 }

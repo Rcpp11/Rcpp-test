@@ -285,7 +285,7 @@ CharacterVector character_reverse( CharacterVector y ){
 
 // [[Rcpp::export]]
 std::string character_names_indexing( CharacterVector y ){
-    std::string foo( y["foo"] ) ;
+    std::string foo = y["foo"] ;
     return foo ;
 }
 
@@ -382,10 +382,8 @@ int stdVectorIntConstRef(const std::vector<int> & x) {
 
 // [[Rcpp::export]]
 std::string character_vector_const_proxy(const CharacterVector& str){
-    char* cstr = (char*) str[0] ;
-    std::string res  ;
-    res += cstr ;
-    return cstr ;
+    std::string res = str[0] ;
+    return res ;
 }
 
 // [[Rcpp::export]]

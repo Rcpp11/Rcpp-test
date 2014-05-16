@@ -83,7 +83,7 @@ StretchyList stretchy_list(){
     out.push_back( 1 ) ;
     out.push_front( "foo" ) ;
     out.push_back( 3.2 ) ;
-    return out;
+    return out ;
 }
 
 // [[Rcpp::export]]
@@ -92,7 +92,7 @@ StretchyList named_stretchy_list(){
     out.push_back( _["b"] = 1 ) ;
     out.push_front( _["a"] = "foo" ) ;
     out.push_back( _["c"] = 3.2 ) ;
-    return out;
+    return out ;
 }
 
 // [[Rcpp::export]]
