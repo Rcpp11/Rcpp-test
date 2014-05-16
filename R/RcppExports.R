@@ -469,6 +469,10 @@ countNamedArgs <- function(...) {
     .Call('RcppTest_countNamedArgs', PACKAGE = 'RcppTest', environment())
 }
 
+wrap_lazy_vector <- function() {
+    .Call('RcppTest_wrap_lazy_vector', PACKAGE = 'RcppTest')
+}
+
 Rcpp_IsNA <- function(x) {
     .Call('RcppTest_Rcpp_IsNA', PACKAGE = 'RcppTest', x)
 }

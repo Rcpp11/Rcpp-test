@@ -133,6 +133,10 @@ test_that( "... is correctly handled", {
   
 })
 
+test_that("wrap handles lazy vectors", {
+  
+})
+
 # test_that( "void can be used as function parameter", {
 #   expect_equal( void_fun(), 2L )
 # })

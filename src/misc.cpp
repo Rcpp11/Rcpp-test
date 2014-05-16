@@ -250,3 +250,8 @@ List countNamedArgs( NamedDots dots){
         ) ;
 }
 
+// [[Rcpp::export]]
+List wrap_lazy_vector(){
+  return list( create(1,2), create(1,2.3) )  ;
+}
+

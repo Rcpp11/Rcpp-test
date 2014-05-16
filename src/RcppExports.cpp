@@ -1711,6 +1711,20 @@ BEGIN_RCPP
     return __sexp_result;
 END_RCPP
 }
+// countNamedArgs
+List countNamedArgs();
+extern "C"  SEXP RcppTest_wrap_lazy_vector() {
+BEGIN_RCPP
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        List __result = wrap_lazy_vector(dots);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
+END_RCPP
+}
 // Rcpp_IsNA
 bool Rcpp_IsNA(double x);
 extern "C"  SEXP RcppTest_Rcpp_IsNA(SEXP xSEXP) {
