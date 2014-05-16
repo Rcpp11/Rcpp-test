@@ -1726,8 +1726,8 @@ BEGIN_RCPP
     return __sexp_result;
 END_RCPP
 }
-// countNamedArgs
-List countNamedArgs();
+// wrap_lazy_vector
+List wrap_lazy_vector();
 extern "C"  SEXP RcppTest_wrap_lazy_vector() {
 BEGIN_RCPP
     SEXP __sexp_result;
