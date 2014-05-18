@@ -149,3 +149,9 @@ SEXP map_int_vector_double(){
     return wrap( map ) ;
 }
 
+// [[Rcpp::export]]
+SEXP wrap_auto_create(){
+    auto v = create( "foo" ) ;
+    return wrap(v) ;    
+}
+

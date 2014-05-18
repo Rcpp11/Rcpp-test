@@ -63,3 +63,7 @@ test_that( "wrap handles const char*", {
   expect_equal(nonnull_const_char(), "foo")
 })
 
+test_that( "wrap handles lazy vector made by create", {
+  expect_equal( wrap_auto_create(), "foo" )
+})
+

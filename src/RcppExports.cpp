@@ -5759,6 +5759,20 @@ BEGIN_RCPP
     return __sexp_result;
 END_RCPP
 }
+// wrap_auto_create
+SEXP wrap_auto_create();
+extern "C"  SEXP RcppTest_wrap_auto_create() {
+BEGIN_RCPP
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        SEXP __result = wrap_auto_create();
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
+END_RCPP
+}
 // xptr_1
 XPtr< std::vector<int> > xptr_1();
 extern "C"  SEXP RcppTest_xptr_1() {

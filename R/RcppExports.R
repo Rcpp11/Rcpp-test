@@ -1513,6 +1513,10 @@ map_int_vector_double <- function() {
     .Call('RcppTest_map_int_vector_double', PACKAGE = 'RcppTest')
 }
 
+wrap_auto_create <- function(){
+    .Call('RcppTest_wrap_auto_create', PACKAGE = 'RcppTest')
+}
+
 xptr_1 <- function() {
     .Call('RcppTest_xptr_1', PACKAGE = 'RcppTest')
 }
