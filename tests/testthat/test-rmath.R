@@ -24,9 +24,7 @@ test_that( "(dpq)norm gives correct results", {
                 list( false_noMean_noSd = dnorm(v),
                       false_noSd = dnorm(v, 0.0),
                       false = dnorm(v, 0.0, 1.0),
-                      true = dnorm(v, 0.0, 1.0, log=TRUE ),
-                      true_noSd = dnorm(v, 0.0, log=TRUE ),
-                      true_noMean_noSd = dnorm(v, log=TRUE )
+                      true = dnorm(v, 0.0, 1.0, log=TRUE )
                 ))
     v <- qnorm(seq(0.0, 1.0, by=0.1))
     expect_equal(runit_pnorm_2(v),
@@ -86,9 +84,7 @@ test_that( "(dpq)unif is correct", {
                     NoLog_noMin_noMax = dunif(vv),
                     NoLog_noMax = dunif(vv, 0),
                     NoLog = dunif(vv, 0, 1),
-                     Log   = dunif(vv, 0, 1, log=TRUE),
-                     Log_noMax   = dunif(vv, 0, log=TRUE)
-                     #,Log_noMin_noMax   = dunif(vv, log=TRUE)  ## wrong answer
+                     Log   = dunif(vv, 0, 1, log=TRUE)
                      ))
     v <- qunif(seq(0.0, 1.0, by=0.1))
     expect_equal(runit_punif_2(v),
@@ -129,8 +125,7 @@ test_that( "(dpq)gamma is correct", {
     v <- 1:4
     expect_equal(runit_dgamma_2(v),
                 list( NoLog = dgamma(v, 1.0, 1.0),
-                      Log = dgamma(v, 1.0, 1.0, log = TRUE ),
-                      Log_noRate = dgamma(v, 1.0, log = TRUE )
+                      Log = dgamma(v, 1.0, 1.0, log = TRUE )
                 ))
 
     v <- (1:9)/10

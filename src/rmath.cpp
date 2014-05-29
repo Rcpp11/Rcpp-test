@@ -399,9 +399,7 @@ List runit_dunif_2( NumericVector xx){
         _["NoLog_noMin_noMax"] = dunif( xx ),
         _["NoLog_noMax"] = dunif( xx, 0.0 ),
         _["NoLog"] = dunif( xx, 0.0 , 1.0 ),
-        _["Log"]	= dunif( xx, 0.0, 1.0 , true ),
-        _["Log_noMax"]	= dunif( xx, 0.0, true )
-        //,_["Log_noMin_noMax"]	= dunif( xx, true )
+        _["Log"]	= dunif( xx, 0.0, 1.0 , true )
     );
 }
 
@@ -409,8 +407,7 @@ List runit_dunif_2( NumericVector xx){
 List runit_dgamma_2( NumericVector xx ){
     return List::create(
         _["NoLog"] = dgamma( xx, 1.0, 1.0),
-        _["Log"]	 = dgamma( xx, 1.0, 1.0, true ),
-        _["Log_noRate"]	 = dgamma( xx, 1.0, true )
+        _["Log"]	 = dgamma( xx, 1.0, 1.0, true )
         );
 }
 
@@ -428,9 +425,7 @@ List runit_dnorm_2( NumericVector xx ){
         _["false_noMean_noSd"] = dnorm( xx ),
         _["false_noSd"] = dnorm( xx, 0.0  ),
         _["false"] = dnorm( xx, 0.0, 1.0 ),
-        _["true"]	 = dnorm( xx, 0.0, 1.0, true ),
-        _["true_noSd"]	 = dnorm( xx, 0.0, true ),
-        _["true_noMean_noSd"]	 = dnorm( xx, true )
+        _["true"]	 = dnorm( xx, 0.0, 1.0, true )
         );
 }
 
