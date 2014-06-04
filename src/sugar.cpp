@@ -254,10 +254,7 @@ NumericVector runit_pmin( NumericVector xx, NumericVector yy ){
 
 // [[Rcpp::export]]
 List runit_pmin_one( NumericVector xx ){
-    return List::create(
-    	pmin( xx, 5),
-    	pmin( 5, xx)
-    	) ;
+    return List::create( pmin( xx, 5.0), pmin( 5.0, xx) ) ;
 }
 
 // [[Rcpp::export]]
@@ -268,10 +265,7 @@ NumericVector runit_pmax( NumericVector xx, NumericVector yy ){
 
 // [[Rcpp::export]]
 List runit_pmax_one( NumericVector xx ){
-    return List::create(
-    	pmax( xx, 5),
-    	pmax( 5, xx)
-    	) ;
+    return List::create( pmax( xx, 5.0), pmax( 5.0, xx) ) ;
 }
 
 // [[Rcpp::export]]
