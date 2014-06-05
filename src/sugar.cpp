@@ -325,11 +325,7 @@ List runit_times( IntegerVector xx ){
 
 // [[Rcpp::export]]
 List runit_divides( NumericVector xx ){
-    return List::create(
-    	xx / 10,
-    	10 / xx,
-    	xx / xx
-    	) ;
+    return List::create( xx / 10.0, 10.0 / xx, xx / xx) ;
 }
 
 // [[Rcpp::export]]
@@ -564,8 +560,8 @@ NumericVector runit_clamp( double a, NumericVector x, double b){
 
 // [[Rcpp::export]]
 List vector_scalar_ops( NumericVector xx ){
-			NumericVector y1 = xx + 2.0;  // NB does not work with ints as eg "+ 2L"
-			NumericVector y2 = 2 - xx;
+			NumericVector y1 = xx + 2.0;
+			NumericVector y2 = 2.0 - xx;
 			NumericVector y3 = xx * 2.0;
 			NumericVector y4 = 2.0 / xx;
 			return List::create(y1, y2, y3, y4);
@@ -573,10 +569,10 @@ List vector_scalar_ops( NumericVector xx ){
 
 // [[Rcpp::export]]
 List vector_scalar_logical( NumericVector xx ){
-			LogicalVector y1 = xx < 2;
-			LogicalVector y2 = 2  > xx;
-			LogicalVector y3 = xx <= 2;
-			LogicalVector y4 = 2 != xx;
+			LogicalVector y1 = xx  < 2.0;
+			LogicalVector y2 = 2.0 > xx;
+			LogicalVector y3 = xx <= 2.0;
+			LogicalVector y4 = 2.0 != xx;
 			return List::create(y1, y2, y3, y4);
 }
 

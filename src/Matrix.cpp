@@ -71,15 +71,16 @@ double runit_NumericMatrix_column( NumericMatrix m ){
     return std::accumulate( col.begin(), col.end(), 0.0 ) ;
 }
 
-// [[Rcpp::export]]
+// [[Rcpp::export]]   
 NumericMatrix runit_NumericMatrix_cumsum( NumericMatrix input ){
     int nr = input.nrow(), nc = input.ncol() ;
     NumericMatrix output(nr, nc) ;
     NumericVector tmp( nr, 0 );
     for( int i=0; i<nc; i++){
         tmp = tmp + input.column(i) ;
-        NumericMatrix::Column target( output, i ) ;
-        std::copy( tmp.begin(), tmp.end(), target.begin() ) ;
+        // NumericMatrix::Column target( output, i ) ;
+        // std::copy( tmp.begin(), tmp.end(), target.begin() ) ;
+        output(_,i) = tmp ;
     }
     return output ;
 }
