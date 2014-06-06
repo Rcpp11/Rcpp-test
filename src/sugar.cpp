@@ -4,11 +4,11 @@ using namespace Rcpp ;
 template <typename T>
 class square : public std::unary_function<T,T> {
 public:
-	T operator()( T t) const { return t*t ; }
+    T operator()( T t) const { return t*t ; }
 } ;
 
 double raw_square( double x){ return x*x; }
-			
+            
 // [[Rcpp::export]]
 List runit_abs( NumericVector xx, IntegerVector yy ){
     return List::create( abs(xx), abs(yy) ) ;
@@ -158,11 +158,11 @@ List runit_pow( NumericVector xx, IntegerVector yy){
 // [[Rcpp::export]]
 List runit_ifelse( NumericVector xx, NumericVector yy){
     return List::create(
-    	 _["vec_vec" ]  = ifelse( xx < yy, xx*xx, -(yy*yy) ),
-    	 _["vec_prim"]  = ifelse( xx < yy, 1.0  , -(yy*yy) ),
-    	 _["prim_vec"]  = ifelse( xx < yy, xx*xx, 1.0      ),
-    	 _["prim_prim"] = ifelse( xx < yy, 1.0, 2.0        )
-    	) ;
+         _["vec_vec" ]  = ifelse( xx < yy, xx*xx, -(yy*yy) ),
+         _["vec_prim"]  = ifelse( xx < yy, 1.0  , -(yy*yy) ),
+         _["prim_vec"]  = ifelse( xx < yy, xx*xx, 1.0      ),
+         _["prim_prim"] = ifelse( xx < yy, 1.0, 2.0        )
+        ) ;
 }
 
 // [[Rcpp::export]]
@@ -209,31 +209,31 @@ List runit_lapply( IntegerVector xx){
 // [[Rcpp::export]]
 List runit_minus( IntegerVector xx ){
     return List::create(
-    	xx - 10,
-    	10 - xx,
-    	xx - xx,
-    	noNA( xx ) - 10,
-    	10 - noNA( xx )
-    	) ;
+        xx - 10,
+        10 - xx,
+        xx - xx,
+        noNA( xx ) - 10,
+        10 - noNA( xx )
+        ) ;
 }
 
 // [[Rcpp::export]]
 List runit_plus( IntegerVector xx ){
     return List::create(
-    	xx + 10,
-    	10 + xx,
-    	xx + xx,
-    	xx + xx + xx
-    	) ;
+        xx + 10,
+        10 + xx,
+        xx + xx,
+        xx + xx + xx
+        ) ;
 }
 
 // [[Rcpp::export]]
 List runit_plus_seqlen(){
     return List::create(
-	    seq_len(10) + 10,
-	    10 + seq_len(10),
-	    seq_len(10) + seq_len(10)
-	    ) ;
+        seq_len(10) + 10,
+        10 + seq_len(10),
+        seq_len(10) + seq_len(10)
+        ) ;
 }
 
 // // [[Rcpp::export]]
@@ -249,7 +249,7 @@ List runit_plus_seqlen(){
 // [[Rcpp::export]]
 NumericVector runit_pmin( NumericVector xx, NumericVector yy ){
     NumericVector res = pmin( xx, yy );
-	return res ;
+    return res ;
 }
 
 // [[Rcpp::export]]
@@ -295,15 +295,15 @@ IntegerVector runit_seqalong( NumericVector xx ){
 // [[Rcpp::export]]
 IntegerVector runit_seqlen(){
     IntegerVector res = seq_len( 10 );
-	return res ;
+    return res ;
 }
 
 // [[Rcpp::export]]
 List runit_sign( NumericVector xx, IntegerVector yy ){
     return List::create(
-	    sign( xx ),
-	    sign( yy )
-	    ) ;
+        sign( xx ),
+        sign( yy )
+        ) ;
 }
 
 // [[Rcpp::export]]
@@ -342,36 +342,36 @@ void runit_wrap( NumericVector xx, NumericVector yy, Environment e ){
 // [[Rcpp::export]]
 List runit_complex( ComplexVector cx ){
     return List::create(
-    	_["Re"]    = Re( cx ),
-    	_["Im"]    = Im( cx ),
-    	_["Conj"]  = Conj( cx ),
-    	_["Mod"]   = Mod( cx ),
-    	_["exp"]   = exp( cx ),
-    	_["log"]   = log( cx ),
-    	_["sqrt"]  = sqrt( cx ),
-    	_["cos"]   = cos( cx ),
-    	_["sin"]   = sin( cx ),
-    	_["tan"]   = tan( cx ),
-    	_["acos"]  = acos( cx ),
-    	_["asin"]  = asin( cx ),
-    	_["atan"]  = atan( cx ),
-    	// _["acosh"] = acosh( cx ),
-    	_["asinh"] = asinh( cx ),
-    	_["atanh"] = atanh( cx ),
-    	_["cosh"]  = cosh( cx ),
-    	_["sinh"]  = sinh( cx ),
-    	_["tanh"]  = tanh( cx )
-    	) ;
+        _["Re"]    = Re( cx ),
+        _["Im"]    = Im( cx ),
+        _["Conj"]  = Conj( cx ),
+        _["Mod"]   = Mod( cx ),
+        _["exp"]   = exp( cx ),
+        _["log"]   = log( cx ),
+        _["sqrt"]  = sqrt( cx ),
+        _["cos"]   = cos( cx ),
+        _["sin"]   = sin( cx ),
+        _["tan"]   = tan( cx ),
+        _["acos"]  = acos( cx ),
+        _["asin"]  = asin( cx ),
+        _["atan"]  = atan( cx ),
+        // _["acosh"] = acosh( cx ),
+        _["asinh"] = asinh( cx ),
+        _["atanh"] = atanh( cx ),
+        _["cosh"]  = cosh( cx ),
+        _["sinh"]  = sinh( cx ),
+        _["tanh"]  = tanh( cx )
+        ) ;
 }
 
 // [[Rcpp::export]]
 List runit_rep( IntegerVector xx ){
     List res = List::create(
-    	_["rep"]      = rep( xx, 3 ),
-    	_["rep_each"] = rep_each( xx, 3 ),
-    	_["rep_len"]  = rep_len( xx, 12 ),
-    	_["rep_prim_double"] = rep( 0.0, 10 )
-    	) ;
+        _["rep"]      = rep( xx, 3 ),
+        _["rep_each"] = rep_each( xx, 3 ),
+        _["rep_len"]  = rep_len( xx, 12 ),
+        _["rep_prim_double"] = rep( 0.0, 10 )
+        ) ;
     return res ;
 }
 
@@ -390,100 +390,100 @@ NumericMatrix runit_outer( NumericVector xx, NumericVector yy){
 // [[Rcpp::export]]
 List runit_row( NumericMatrix xx ){
     return List::create(
-    	_["row"] = row( xx ),
-    	_["col"] = col( xx )
-    	 ) ;
+        _["row"] = row( xx ),
+        _["col"] = col( xx )
+         ) ;
 }
 
 // [[Rcpp::export]]
 List runit_head( NumericVector xx ){
     return List::create(
-    	_["pos"] = head( xx, 5 ),
-    	_["neg"] = head( xx, -5 )
+        _["pos"] = head( xx, 5 ),
+        _["neg"] = head( xx, -5 )
     ) ;
 }
 
 // [[Rcpp::export]]
 List runit_tail( NumericVector xx ){
     return List::create(
-    	_["pos"] = tail( xx, 5 ),
-    	_["neg"] = tail( xx, -5 )
+        _["pos"] = tail( xx, 5 ),
+        _["neg"] = tail( xx, -5 )
     ) ;
 }
 
 // [[Rcpp::export]]
 List runit_diag( NumericVector xx, NumericMatrix mm ){
     return List::create(
-    	diag( xx ) ,
-    	diag( mm ),
-    	diag( outer( xx, xx, std::plus<double>() ) )
-    	) ;
+        diag( xx ) ,
+        diag( mm ),
+        diag( outer( xx, xx, std::plus<double>() ) )
+        ) ;
 }
 
 // [[Rcpp::export]]
 List runit_gamma( NumericVector xx ){
     return List::create(
-    	_["gamma"]      = gamma(xx),
-    	_["lgamma"]     = lgamma(xx),
-    	_["digamma"]    = digamma(xx),
-    	_["trigamma"]   = trigamma(xx),
-    	_["tetragamma"] = tetragamma(xx),
-    	_["pentagamma"] = pentagamma(xx),
-    	_["factorial"]  = factorial(xx),
-    	_["lfactorial"] = lfactorial(xx)
-    	) ;
+        _["gamma"]      = gamma(xx),
+        _["lgamma"]     = lgamma(xx),
+        _["digamma"]    = digamma(xx),
+        _["trigamma"]   = trigamma(xx),
+        _["tetragamma"] = tetragamma(xx),
+        _["pentagamma"] = pentagamma(xx),
+        _["factorial"]  = factorial(xx),
+        _["lfactorial"] = lfactorial(xx)
+        ) ;
 }
 
 // [[Rcpp::export]]
 List runit_choose( NumericVector nn, NumericVector kk ){
     return List::create(
-    	_["VV"] = choose(nn,kk),
-    	_["PV"] = choose(10.0, kk ),
-    	_["VP"] = choose(nn, 5.0 )
-    	) ;
+        _["VV"] = choose(nn,kk),
+        _["PV"] = choose(10.0, kk ),
+        _["VP"] = choose(nn, 5.0 )
+        ) ;
 }
 
 // [[Rcpp::export]]
 List runit_lchoose( NumericVector nn, NumericVector kk){
     return List::create(
-    	_["VV"] = lchoose(nn,kk),
-    	_["PV"] = lchoose(10.0, kk ),
-    	_["VP"] = lchoose(nn, 5.0 )
-    	) ;
+        _["VV"] = lchoose(nn,kk),
+        _["PV"] = lchoose(10.0, kk ),
+        _["VP"] = lchoose(nn, 5.0 )
+        ) ;
 }
 
 // [[Rcpp::export]]
 List runit_beta( NumericVector nn, NumericVector kk){
     return List::create(
-    	_["VV"] = beta(nn,kk),
-    	_["PV"] = beta(10.0, kk ),
-    	_["VP"] = beta(nn, 5.0 )
-    	) ;
+        _["VV"] = beta(nn,kk),
+        _["PV"] = beta(10.0, kk ),
+        _["VP"] = beta(nn, 5.0 )
+        ) ;
 }
 // [[Rcpp::export]]
 List runit_psigamma( NumericVector nn, NumericVector kk){
     return List::create(
-    	_["VV"] = psigamma(nn,kk),
-    	_["PV"] = psigamma(10.0, kk ),
-    	_["VP"] = psigamma(nn, 5.0 )
-    	) ;
+        _["VV"] = psigamma(nn,kk),
+        _["PV"] = psigamma(10.0, kk ),
+        _["VP"] = psigamma(nn, 5.0 )
+        ) ;
 }
 
 // [[Rcpp::export]]
 List runit_lbeta( NumericVector nn, NumericVector kk){
     return List::create(
-    	_["VV"] = lbeta(nn,kk),
-    	_["PV"] = lbeta(10.0, kk ),
-    	_["VP"] = lbeta(nn, 5.0 )
-    	) ;
+        _["VV"] = lbeta(nn,kk),
+        _["PV"] = lbeta(10.0, kk ),
+        _["VP"] = lbeta(nn, 5.0 )
+        ) ;
 }
 
 // [[Rcpp::export]]
 List runit_log1p( NumericVector xx){
     return List::create(
-    	_["log1p"] = log1p(xx),
-    	_["expm1"] = expm1(xx)
-    	) ;
+        _["log1p"] = log1p(xx),
+        _["expm1"] = expm1(xx)
+        ) ;
 }
 
 // [[Rcpp::export]]
@@ -560,49 +560,49 @@ NumericVector runit_clamp( double a, NumericVector x, double b){
 
 // [[Rcpp::export]]
 List vector_scalar_ops( NumericVector xx ){
-			NumericVector y1 = xx + 2.0;
-			NumericVector y2 = 2.0 - xx;
-			NumericVector y3 = xx * 2.0;
-			NumericVector y4 = 2.0 / xx;
-			return List::create(y1, y2, y3, y4);
+    NumericVector y1 = xx + 2.0;
+    NumericVector y2 = 2.0 - xx;
+    NumericVector y3 = xx * 2.0;
+    NumericVector y4 = 2.0 / xx;
+    return List::create(y1, y2, y3, y4);
 }
 
 // [[Rcpp::export]]
 List vector_scalar_logical( NumericVector xx ){
-			LogicalVector y1 = xx  < 2.0;
-			LogicalVector y2 = 2.0 > xx;
-			LogicalVector y3 = xx <= 2.0;
-			LogicalVector y4 = 2.0 != xx;
-			return List::create(y1, y2, y3, y4);
+    LogicalVector y1 = xx  < 2.0;
+    LogicalVector y2 = 2.0 > xx;
+    LogicalVector y3 = xx <= 2.0;
+    LogicalVector y4 = 2.0 != xx;
+    return List::create(y1, y2, y3, y4);
 }
 
 // [[Rcpp::export]]
 List vector_vector_ops( NumericVector xx, NumericVector yy){
-			NumericVector y1 = xx + yy;
-			NumericVector y2 = yy - xx;
-			NumericVector y3 = xx * yy;
-			NumericVector y4 = yy / xx;
-			return List::create(y1, y2, y3, y4);
+    NumericVector y1 = xx + yy;
+    NumericVector y2 = yy - xx;
+    NumericVector y3 = xx * yy;
+    NumericVector y4 = yy / xx;
+    return List::create(y1, y2, y3, y4);
 }
 
 // [[Rcpp::export]]
 List vector_vector_logical( NumericVector xx, NumericVector yy){
-			LogicalVector y1 = xx < yy;
-			LogicalVector y2 = xx > yy;
-			LogicalVector y3 = xx <= yy;
-			LogicalVector y4 = xx >= yy;
-			LogicalVector y5 = xx == yy;
-			LogicalVector y6 = xx != yy;
-			return List::create(y1, y2, y3, y4, y5, y6);
+    LogicalVector y1 = xx < yy;
+    LogicalVector y2 = xx > yy;
+    LogicalVector y3 = xx <= yy;
+    LogicalVector y4 = xx >= yy;
+    LogicalVector y5 = xx == yy;
+    LogicalVector y6 = xx != yy;
+    return List::create(y1, y2, y3, y4, y5, y6);
 }   
 
 // [[Rcpp::export]]
 List complex_binary_sugar(ComplexVector xx, ComplexVector yy){
     return List::create(
-    	_["+"] = xx + yy,
-    	_["-"] = xx - yy,
-    	_["*"] = xx * yy,
-    	_["/"] = xx / yy
+        _["+"] = xx + yy,
+        _["-"] = xx - yy,
+        _["*"] = xx * yy,
+        _["/"] = xx / yy
     ) ;
 }
 
