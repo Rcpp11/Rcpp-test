@@ -1,0 +1,7 @@
+* using log directory ‘/Users/kevinushey/git/Rcpp-test/..Rcheck’
+* using R Under development (unstable) (2014-05-03 r65519)
+* using platform: x86_64-apple-darwin13.1.0 (64-bit)
+* using session charset: UTF-8
+* checking for file ‘./DESCRIPTION’ ... ERROR
+Required fields missing or empty:
+  ‘Author’ ‘Maintainer’
