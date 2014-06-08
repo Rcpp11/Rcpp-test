@@ -33,7 +33,8 @@ test_that("x[x > 0] works", {
 })
 
 test_that("Subsetting with const char* works", {
-  expect_equal(subset_test_literal(list(foo = "foo", bar = "bar")), list(foo = "foo"))
+  res <- subset_test_literal(list(foo = "foo", bar = "bar"))
+  expect_equal(res[[1]], "foo")
 })
 
 test_that("x[x > 0] = 0 works", {
