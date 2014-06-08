@@ -18,7 +18,7 @@ NumericVector subset_test_char(NumericVector x, CharacterVector y) {
 
 // [[Rcpp::export]]
 NumericVector subset_test_greater_0(NumericVector x) {
-    return x[ x > 0 ];
+    return x[ x > 0.0 ];
 }
 
 // [[Rcpp::export]]
