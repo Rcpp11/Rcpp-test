@@ -3,3 +3,5 @@
 .RData
 *.o
 *.so
+R/RcppExports.R
+src/RcppExports.cpp
