@@ -30,7 +30,7 @@ test_that( "Environment::exists is correct", {
 
 test_that( "Environment::assign is correct", {
 	e <- new.env( )
-	expect_true( runit_assign(e, "a", 1:10 ))
+	runit_assign(e, "a", 1:10 )
 	expect_equal( ls(e), c("a"))
 	expect_equal( e$a, 1:10)
 	

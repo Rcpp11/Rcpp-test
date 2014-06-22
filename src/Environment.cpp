@@ -22,8 +22,8 @@ bool runit_exists( Environment env, std::string st){
 }
 
 // [[Rcpp::export]]
-bool runit_assign( Environment env, std::string st, SEXP object ){
-    return env.assign(st, object) ;
+void runit_assign( Environment env, std::string st, SEXP object ){
+    env.assign(st, object) ;
 }
 
 // [[Rcpp::export]]
