@@ -128,7 +128,7 @@ RObject attr_set(){
 
 // [[Rcpp::export]]
 bool isNULL(RObject x){
-    return x.isNULL() ;
+    return is_null(x) ;
 }
 
 // [[Rcpp::export]]
