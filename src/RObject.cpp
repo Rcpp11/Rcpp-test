@@ -133,6 +133,6 @@ bool isNULL(RObject x){
 
 // [[Rcpp::export]]
 bool inherits_( RObject xx){
-    return xx.inherits( "foo" ) ;
+    return inherits( xx, "foo" ) ;
 }
 
