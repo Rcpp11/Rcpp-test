@@ -106,16 +106,14 @@ IntegerVector integer_INTSXP(SEXP vec){
 // [[Rcpp::export]]
 IntegerVector integer_names_set(){
     IntegerVector y(2) ;
-    std::vector<std::string> names(2)  ;
-    names[0] = "foo" ;
-    names[1] = "bar" ;
-    y.names() = names ;
+    std::vector<std::string> names_{"foo","bar"} ;
+    names(y) = names_ ;
     return y ;    
 }
 
 // [[Rcpp::export]]
 CharacterVector integer_names_get( IntegerVector y ){
-    return y.names() ;
+    return names(y) ;
 }
 
 // [[Rcpp::export]]
@@ -195,7 +193,7 @@ List list_VECSXP_( SEXP vec){
 List list_iterator_( List input, Function fun){
     List output( input.size() ) ;
     std::transform( input.begin(), input.end(), output.begin(), fun ) ;
-    output.names() = input.names() ;
+    names(output) = names(input) ;
     return output ;
 }
 
