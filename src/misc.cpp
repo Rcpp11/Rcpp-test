@@ -175,28 +175,28 @@ List functions_REALSXP(){
 // [[Rcpp::export]]
 List S4_methods( RObject y ){
     List res(5) ;
-    res[0] = y.isS4() ;
-    res[1] = y.hasSlot("x") ;
-    res[2] = y.hasSlot("z") ;
-    res[3] = y.slot("x") ;
-    res[4] = y.slot("y") ;
+    res[0] = isS4(y) ;
+    res[1] = has_slot(y,"x") ;
+    res[2] = has_slot(y,"z") ;
+    res[3] = slot(y,"x") ;
+    res[4] = slot(y,"y") ;
     return res ;        
 }
 
 // [[Rcpp::export]]
 void S4_getslots( S4 y){
-    y.slot( "x" ) = 10.0 ;
-    y.slot( "y" ) = 20.0 ;
+    slot( y, "x" ) = 10.0 ;
+    slot( y, "y" ) = 20.0 ;
 }      
 
 // [[Rcpp::export]]
 void S4_setslots( S4 y ){
-    y.slot( "foo" ) = 10.0 ;
+    slot( y, "foo" ) = 10.0 ;
 }
 
 // [[Rcpp::export]]
 void S4_setslots_2( S4 y){
-    y.slot( "foo" ) ;    
+    slot( y, "foo" ) ;    
 }
 
 // [[Rcpp::export]]
@@ -216,19 +216,19 @@ bool S4_is_trackCurve(S4 tr){
 
 // [[Rcpp::export]]
 NumericVector S4_get_slot_x(S4 o){
-    NumericVector res( o.slot("x") );
+    NumericVector res( slot(o, "x") );
     return res ;    
 }
 
 // [[Rcpp::export]]
 CharacterVector S4_get_attr_x(IntegerVector o){
-    CharacterVector res( o.attr("foo") ) ;
+    CharacterVector res( attr(o, "foo") ) ;
     return res ;
 }
 
 // [[Rcpp::export]]
 S4 S4_dotdata(S4 foo){
-    foo.slot( ".Data" ) = "foooo" ;
+    slot( foo, ".Data" ) = "foooo" ;
     return foo ;
 }
 

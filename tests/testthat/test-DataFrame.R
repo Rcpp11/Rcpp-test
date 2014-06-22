@@ -33,12 +33,12 @@ test_that( "DataFrame can be created from proxies", {
     suppressWarnings( setClass("track", representation(x="data.frame", y = "function"), where = environment()) )
     df <- data.frame( x = 1:10, y = 1:10 )
     tr1 <- new( "track", x = df, y = rnorm )
-    expect_true( identical( SlotProxy(tr1, "x"), df ))
-    expect_error(SlotProxy(tr1, "y"))
+    expect_true( identical( DataFrame_SlotProxy(tr1, "x"), df ))
+    expect_error(DataFrame_SlotProxy(tr1, "y"))
 
     tr1 <- structure( NULL, x = df, y = rnorm )
-    expect_true( identical( AttributeProxy(tr1, "x"), df) )
-    expect_error( AttributeProxy(tr1, "y"))
+    expect_true( identical( DataFrame_AttributeProxy(tr1, "x"), df) )
+    expect_error( DataFrame_AttributeProxy(tr1, "y"))
 })
 
 test_that( "DataFrame::nrows give the correct number of rows",{

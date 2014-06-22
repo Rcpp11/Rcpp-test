@@ -109,20 +109,19 @@ std::set<std::string> stdsetstring(){
 }
 
 // [[Rcpp::export]]
-bool hasAttribute( DataFrame x){
-    bool has_class = x.hasAttribute( "class" ) ;
-    return has_class ;
+bool hasAttribute( DataFrame x ){
+    return has_attr( x, "class" ) ;
 }
 
 // [[Rcpp::export]]
 SEXP attr_( DataFrame x){
-    return x.attr( "row.names" ) ;
+    return attr(x, "row.names" ) ;
 }
     
 // [[Rcpp::export]]
 RObject attr_set(){
     RObject y = wrap("blabla") ;
-	y.attr("foo") = 10 ;
+	attr(y, "foo") = 10 ;
 	return y ;
 }
 

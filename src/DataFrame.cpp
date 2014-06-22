@@ -41,13 +41,13 @@ DataFrame createTwo(){
 }
 
 // [[Rcpp::export]]
-DataFrame SlotProxy( S4 o, std::string yy ){
-    return DataFrame( o.slot( yy ) ) ;
+DataFrame DataFrame_SlotProxy( S4 o, std::string yy ){
+    return DataFrame( slot(o, yy ) ) ;
 }
 
 // [[Rcpp::export]]
-DataFrame AttributeProxy( List o, std::string y ){
-    return DataFrame( o.attr( y )) ;
+DataFrame DataFrame_AttributeProxy( List o, std::string y ){
+    return DataFrame( attr(o,y ) );
 }
 
 // [[Rcpp::export]]
