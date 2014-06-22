@@ -51,19 +51,6 @@ DataFrame DataFrame_AttributeProxy( List o, std::string y ){
 }
 
 // [[Rcpp::export]]
-DataFrame createTwoStringsAsFactors(){
-    IntegerVector v = IntegerVector::create(1,2,3);
-	std::vector<std::string> s(3);
-	s[0] = "a";
-	s[1] = "b";
-	s[2] = "c";
-	return DataFrame::create(
-		_["a"] = v,
-		_["b"] = s,
-		_["stringsAsFactors"] = false );
-}
-
-// [[Rcpp::export]]
 int DataFrame_nrows( DataFrame df){
     return df.nrows() ;
 }

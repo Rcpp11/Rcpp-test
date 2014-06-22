@@ -22,11 +22,8 @@ test_that( "DataFrame::create works", {
     DF <- data.frame(a=1:3)
     expect_equal( createOne(), DF)
 
-    DF <- data.frame(a=1:3, b=c("a","b","c"))
-    expect_equal( createTwo(), DF)
-    
     DF <- data.frame(a=1:3, b=c("a","b","c"), stringsAsFactors = FALSE )
-    expect_equal( createTwoStringsAsFactors(), DF)
+    expect_equal( createTwo(), DF)
 })
 
 test_that( "DataFrame can be created from proxies", {
