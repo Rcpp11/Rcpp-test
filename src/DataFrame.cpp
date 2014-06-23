@@ -33,10 +33,7 @@ DataFrame createOne(){
 // [[Rcpp::export]]
 DataFrame createTwo(){
     IntegerVector v = IntegerVector::create(1,2,3);
-	std::vector<std::string> s(3);
-	s[0] = "a";
-	s[1] = "b";
-	s[2] = "c";
+	std::vector<std::string> s = {"a", "b", "c" } ;
 	return DataFrame::create(Named("a")=v, Named("b")=s);
 }
 
