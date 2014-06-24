@@ -6,11 +6,11 @@ using namespace Rcpp ;
 
 // [[Rcpp::export]]
 SEXP symbol_(){
-    return LogicalVector::create( 
-        Symbol( Rf_install("foobar") ) == Rf_install("foobar"), 
-        Symbol( Rf_mkChar("foobar") ) == Rf_install("foobar"), 
-        Symbol( Rf_mkString("foobar") ) == Rf_install("foobar"), 
-        Symbol( "foobar" ) == Rf_install("foobar") 
+    return LogicalVector::create(
+        Symbol( Rf_install("foobar") ) == Rf_install("foobar"),
+        Symbol( Rf_mkChar("foobar") ) == Rf_install("foobar"),
+        Symbol( Rf_mkString("foobar") ) == Rf_install("foobar"),
+        Symbol( "foobar" ) == Rf_install("foobar")
     ) ;
 }
 
@@ -23,7 +23,7 @@ List Argument_(){
     return List::create( x = 2, y = 3 );
 }
 
-// [[Rcpp::export]] 
+// [[Rcpp::export]]
 SEXP evaluator_error(){
     return Rcpp_eval( Rf_lang2( Rf_install("stop"), Rf_mkString( "boom" ) ) ) ;
 }
@@ -40,42 +40,42 @@ void exceptions_(){
 
 // [[Rcpp::export]]
 LogicalVector has_iterator_( ){
-    return LogicalVector::create( 
-        (bool)Rcpp::traits::has_iterator< std::vector<int> >::value, 
-        (bool)Rcpp::traits::has_iterator< std::list<int> >::value, 
-        (bool)Rcpp::traits::has_iterator< std::deque<int> >::value, 
-        (bool)Rcpp::traits::has_iterator< std::set<int> >::value, 
-        (bool)Rcpp::traits::has_iterator< std::map<std::string,int> >::value, 
-        (bool)Rcpp::traits::has_iterator< std::pair<std::string,int> >::value, 
-        (bool)Rcpp::traits::has_iterator< Rcpp::Symbol >::value 
+    return LogicalVector::create(
+        (bool)Rcpp::traits::has_iterator< std::vector<int> >::value,
+        (bool)Rcpp::traits::has_iterator< std::list<int> >::value,
+        (bool)Rcpp::traits::has_iterator< std::deque<int> >::value,
+        (bool)Rcpp::traits::has_iterator< std::set<int> >::value,
+        (bool)Rcpp::traits::has_iterator< std::map<std::string,int> >::value,
+        (bool)Rcpp::traits::has_iterator< std::pair<std::string,int> >::value,
+        (bool)Rcpp::traits::has_iterator< Rcpp::Symbol >::value
         );
 }
 
 // [[Rcpp::export]]
 LogicalVector na_proxy(){
     CharacterVector s("foo") ;
-    return LogicalVector::create( 
-        NA_REAL    == NA, 
+    return LogicalVector::create(
+        NA_REAL    == NA,
         NA_INTEGER == NA,
         NA_STRING  == NA,
-        true       == NA, 
-        false      == NA, 
-        1.2        == NA, 
+        true       == NA,
+        false      == NA,
+        1.2        == NA,
         12         == NA,
         "foo"      == NA,
-        s[0]       == NA, 
-        
-        NA         == NA_REAL, 
+        s[0]       == NA,
+
+        NA         == NA_REAL,
         NA         == NA_INTEGER,
         NA         == NA_STRING,
-        NA         == true, 
+        NA         == true,
         NA         == false,
-        NA         == 1.2  , 
+        NA         == 1.2  ,
         NA         == 12   ,
-        NA         == "foo", 
+        NA         == "foo",
         NA         == s[0]
         ) ;
-}      
+}
 
 // [[Rcpp::export]]
 StretchyList stretchy_list(){
@@ -179,14 +179,14 @@ List S4_methods( RObject y ){
     res[2] = has_slot(y,"z") ;
     res[3] = slot(y,"x") ;
     res[4] = slot(y,"y") ;
-    return res ;        
+    return res ;
 }
 
 // [[Rcpp::export]]
 void S4_getslots( S4 y){
     slot( y, "x" ) = 10.0 ;
     slot( y, "y" ) = 20.0 ;
-}      
+}
 
 // [[Rcpp::export]]
 void S4_setslots( S4 y ){
@@ -195,12 +195,12 @@ void S4_setslots( S4 y ){
 
 // [[Rcpp::export]]
 void S4_setslots_2( S4 y){
-    slot( y, "foo" ) ;    
+    slot( y, "foo" ) ;
 }
 
 // [[Rcpp::export]]
 S4 S4_ctor( std::string cl){
-    return S4( cl );    
+    return S4( cl );
 }
 
 // [[Rcpp::export]]
@@ -216,7 +216,7 @@ bool S4_is_trackCurve(S4 tr){
 // [[Rcpp::export]]
 NumericVector S4_get_slot_x(S4 o){
     NumericVector res( slot(o, "x") );
-    return res ;    
+    return res ;
 }
 
 // [[Rcpp::export]]
@@ -233,7 +233,7 @@ S4 S4_dotdata(S4 foo){
 
 // [[Rcpp::export]]
 int countArgs(Dots dots){
-    return dots.size() ;    
+    return dots.size() ;
 }
 
 // [[Rcpp::export]]
@@ -243,8 +243,8 @@ List countNamedArgs( NamedDots dots){
     for( int i=0; i<n; i++){
         names[i] = String( PRINTNAME(dots.symbol(i)) ) ;
     }
-    return List::create( 
-        _["count"] = n, 
+    return List::create(
+        _["count"] = n,
         _["names"] = names
         ) ;
 }
@@ -252,5 +252,10 @@ List countNamedArgs( NamedDots dots){
 // [[Rcpp::export]]
 List wrap_lazy_vector(){
   return list( create(1,2), create(1,2.3) )  ;
+}
+
+// [[Rcpp::export]]
+Shield<SEXP> test_shield(Shield<SEXP> x) {
+  return R_NilValue;
 }
 

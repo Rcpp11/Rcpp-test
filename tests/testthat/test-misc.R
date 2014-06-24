@@ -133,6 +133,10 @@ test_that( "... is correctly handled", {
   
 })
 
+test_that("Shield<SEXP> can be passed and returned", {
+  expect_identical(test_shield(), NULL)
+})
+
 test_that("wrap handles lazy vectors", {
   
 })
