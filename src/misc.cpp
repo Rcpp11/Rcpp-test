@@ -256,6 +256,6 @@ List wrap_lazy_vector(){
 
 // [[Rcpp::export]]
 Shield<SEXP> test_shield(Shield<SEXP> x) {
-  return R_NilValue;
+  return x;
 }
 
