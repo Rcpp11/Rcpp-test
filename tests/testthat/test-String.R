@@ -17,3 +17,11 @@ test_that( "wstring are supported", {
   expect_equal( wstring_param( "foo", "bar" ), "foobar" )
   expect_equal( wrap_vector_wstring( ), c("foo", "bar" ) )
 })
+
+test_that( "String handles encoding #219", {
+  a <- "å"
+  b <- a
+  Encoding(b) <- "unknown"
+  
+  expect_true( String_encoding_equality(a,b) )  
+})

@@ -45,6 +45,11 @@ std::vector<std::wstring> wrap_vector_wstring(){
 }
 
 // [[Rcpp::export]]
+bool String_encoding_equality(String a, String b){
+    return a == b ;    
+}
+
+// [[Rcpp::export]]
 std::vector<std::wstring> as_vector_wstring( std::vector<std::wstring> x){
     for( size_t i=0; i<x.size(); i++){
         x[i] += L"€" ;    
