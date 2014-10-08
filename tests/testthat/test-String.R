@@ -19,8 +19,8 @@ test_that( "wstring are supported", {
 })
 
 test_that( "String handles encoding #219", {
-  a <- "å"
-  b <- a
+  a <- b <- "å"
+  Encoding(a) <- "UTF-8"
   Encoding(b) <- "unknown"
   
   expect_true( String_encoding_equality(a,b) )  
