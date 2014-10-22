@@ -155,3 +155,15 @@ SEXP wrap_auto_create(){
     return wrap(v) ;    
 }
 
+// [[Rcpp::export]]
+SEXP wrap_tuple_with_names(){
+    auto a = std::make_tuple( _["a"] = 1, 2 ) ;
+    return wrap(a) ;    
+}
+
+// [[Rcpp::export]]
+SEXP wrap_tuple_without_names(){
+    auto a = std::make_tuple( "foo", 2, 3.2 ) ;
+    return wrap(a) ;    
+}
+

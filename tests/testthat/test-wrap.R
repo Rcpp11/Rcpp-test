@@ -67,3 +67,15 @@ test_that( "wrap handles lazy vector made by create", {
   expect_equal( wrap_auto_create(), "foo" )
 })
 
+test_that( "wrap handles tuples (#195)", {
+  x <- wrap_tuple_with_names()
+  expect_equal( names(x), c("a", "" ) )
+  expect_equal( x[[1]], 1 )
+  expect_equal( x[[2]], 2 ) 
+  
+  x <- wrap_tuple_without_names()
+  expect_true( is.null(names(x)) )
+  expect_equal( x[[1]], "foo" )
+  expect_equal( x[[2]], 2 )
+  expect_equal( x[[3]], 3.2 )
+})
