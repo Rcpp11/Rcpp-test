@@ -392,3 +392,8 @@ CharacterVector CharacterVector_test_const_proxy(const CharacterVector x){
     }
     return out ;
 }
+
+// [[Rcpp::export]]
+LogicalVector logical_vector_from_initializer_list() {
+  return LogicalVector{true, true, false};
+}

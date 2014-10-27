@@ -158,3 +158,6 @@ test_that( "CharacterVector const proxy work", {
     expect_equal( CharacterVector_test_const_proxy(letters), letters )
 })
 
+test_that("LogicalVector from initializer list", {
+  expect_equal(logical_vector_from_initializer_list(), c(TRUE, TRUE, FALSE))
+})
