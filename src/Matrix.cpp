@@ -169,4 +169,26 @@ CharacterVector character_matrix_row_iteration_decr( CharacterMatrix m ){
     return wrap( pasted_row ) ;
 }
 
+// [[Rcpp::export]]
+CharacterVector rownames_get(IntegerMatrix m){
+    return rownames(m) ;
+}
+
+// [[Rcpp::export]]
+IntegerMatrix rownames_set(IntegerMatrix m){
+    rownames(m) = {"z","y","x","w","v"};
+    return m ;
+}
+
+// [[Rcpp::export]]
+CharacterVector colnames_get(IntegerMatrix m){
+    return colnames(m) ;
+}
+
+// [[Rcpp::export]]
+IntegerMatrix colnames_set(IntegerMatrix m){
+    colnames(m) = {"z","y","x","w"};
+    return m ;
+}
+
 

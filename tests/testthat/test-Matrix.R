@@ -90,3 +90,17 @@ test_that( "Matrix::row works", {
     expect_equal( character_matrix_row_iteration_decr(x), "njf")
 })
 
+test_that("rownames/colnames handling (#210)", {
+    m <- matrix( 1:20, nc = 4 )
+    dimnames(m) <- list( letters[1:5], letters[1:4] )
+    expect_equal( rownames_get(m), letters[1:5] )
+    expect_equal( colnames_get(m), letters[1:4] )
+        
+    m <- rownames_set(m)
+    m <- colnames_set(m)
+    
+    expect_equal( rownames(m), rev(tail(letters,5)) )
+    expect_equal( colnames(m), rev(tail(letters,4)) )
+    
+})
+
