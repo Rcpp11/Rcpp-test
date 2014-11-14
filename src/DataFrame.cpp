@@ -63,4 +63,14 @@ DataFrame DataFrame_proxies( DataFrame df){
     return df ;
 }
 
+// [[Rcpp::export]]
+CharacterVector df_rownames_get(DataFrame m){
+    return rownames(m) ;
+}
+
+// [[Rcpp::export]]
+DataFrame df_rownames_set(DataFrame m){
+    rownames(m) = {"z","y","x","w","v"};
+    return m ;
+}
 

@@ -55,3 +55,12 @@ test_that("DataFrame proxies dont create corrupt data frames", {
   expect_equal(df[["x4"]], rep(2.0,5) )
   
 })
+
+test_that("rownames(DataFrame) works", {
+  df <- data.frame( x = 1:6 )
+  expect_equal( df_rownames_get(df), as.character(1:6) )
+  
+  df_rownames_set(df)
+  expect_equal(rownames(df), rev(tail(letters, 6)))
+})
+
