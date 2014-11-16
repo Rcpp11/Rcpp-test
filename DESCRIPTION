@@ -10,4 +10,3 @@ Description: R and C++11
 Depends: R (>= 3.1.0)
 LinkingTo: Rcpp11
 License: MIT + file LICENSE
-
