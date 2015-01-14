@@ -104,3 +104,11 @@ test_that("rownames/colnames handling (#210)", {
     
 })
 
+test_that("SquareMatrix (Rcpp11#224)", {
+  m <- matrix( 1:16, 4 )
+  expect_equal( test_SquareMatrix(m), 0L )
+  
+  m <- matrix( 1:16, 2 )
+  expect_error( test_SquareMatrix(m) )
+})
+

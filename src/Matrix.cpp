@@ -191,4 +191,8 @@ IntegerMatrix colnames_set(IntegerMatrix m){
     return m ;
 }
 
+// [[Rcpp::export]]
+int test_SquareMatrix( SquareIntegerMatrix m ){ 
+    return 0 ;
+}
 
