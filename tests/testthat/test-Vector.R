@@ -161,3 +161,10 @@ test_that( "CharacterVector const proxy work", {
 test_that("LogicalVector from initializer list", {
   expect_equal(logical_vector_from_initializer_list(), c(TRUE, TRUE, FALSE))
 })
+
+test_that("compound operators work", {
+  x <- 1:5
+  res <- compound_operators_Vector(x,x)
+  expect_equal( res, list(x+x, x-x, x*x, x/x) ) 
+})
+

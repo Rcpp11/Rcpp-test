@@ -397,3 +397,16 @@ CharacterVector CharacterVector_test_const_proxy(const CharacterVector x){
 LogicalVector logical_vector_from_initializer_list() {
   return LogicalVector{true, true, false};
 }
+
+// [[Rcpp::export]]
+List compound_operators_Vector( NumericVector x, NumericVector y) {
+    NumericVector sum=clone(x), minus=clone(x), times=clone(x), divides = clone(x);
+    
+    sum     += y ;
+    minus   -= y ;
+    times   *= y ;
+    divides /= y ;
+    
+    return list(sum, minus, times, divides) ;
+}
+
