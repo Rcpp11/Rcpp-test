@@ -398,9 +398,9 @@ LogicalVector logical_vector_from_initializer_list() {
   return LogicalVector{true, true, false};
 }
 
-// [[Rcpp::export]]
-List compound_operators_Vector( NumericVector x, NumericVector y) {
-    NumericVector sum=clone(x), minus=clone(x), times=clone(x), divides = clone(x);
+template <typename T, typename U>
+List compound( T x, U y){
+    T sum=clone(x), minus=clone(x), times=clone(x), divides = clone(x);
     
     sum     += y ;
     minus   -= y ;
@@ -411,14 +411,17 @@ List compound_operators_Vector( NumericVector x, NumericVector y) {
 }
 
 // [[Rcpp::export]]
+List compound_operators_Vector( NumericVector x, NumericVector y) {
+    return compound(x, y) ;
+}
+
+// [[Rcpp::export]]
 List compound_operators_Vector_primitive( NumericVector x, double y){
-    NumericVector sum=clone(x), minus=clone(x), times=clone(x), divides = clone(x);
-    
-    sum     += y ;
-    minus   -= y ;
-    times   *= y ;
-    divides /= y ;
-    
-    return list(sum, minus, times, divides) ;
+    return compound(x, y) ;
+}
+
+// [[Rcpp::export]]
+List compound_operators_Matrix_primitive( NumericMatrix x, double y){
+    return compound(x, y) ;
 }
 

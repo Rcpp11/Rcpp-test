@@ -169,5 +169,10 @@ test_that("compound operators work", {
 
   res <- compound_operators_Vector_primitive(x,2.0)
   expect_equal( res, list(x+2.0, x-2.0, x*2.0, x/2.0) ) 
+  
+  M <- matrix( seq(0, 1, length.out=16), 4 )
+  res <- compound_operators_Matrix_primitive(M, 2.0)
+  expect_equal( res, list(M+2.0, M-2.0, M*2.0, M/2.0) ) 
+  
 })
 
