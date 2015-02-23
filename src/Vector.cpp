@@ -410,3 +410,15 @@ List compound_operators_Vector( NumericVector x, NumericVector y) {
     return list(sum, minus, times, divides) ;
 }
 
+// [[Rcpp::export]]
+List compound_operators_Vector_primitive( NumericVector x, double y){
+    NumericVector sum=clone(x), minus=clone(x), times=clone(x), divides = clone(x);
+    
+    sum     += y ;
+    minus   -= y ;
+    times   *= y ;
+    divides /= y ;
+    
+    return list(sum, minus, times, divides) ;
+}
+

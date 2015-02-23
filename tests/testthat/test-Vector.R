@@ -166,5 +166,8 @@ test_that("compound operators work", {
   x <- 1:5
   res <- compound_operators_Vector(x,x)
   expect_equal( res, list(x+x, x-x, x*x, x/x) ) 
+
+  res <- compound_operators_Vector_primitive(x,2.0)
+  expect_equal( res, list(x+2.0, x-2.0, x*2.0, x/2.0) ) 
 })
 
