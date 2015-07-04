@@ -176,3 +176,7 @@ test_that("compound operators work", {
   
 })
 
+test_that("large vector work #227)", {
+  expect_equal( length(test_large_vector()), 5000000000 )  
+})
+

@@ -425,3 +425,10 @@ List compound_operators_Matrix_primitive( NumericMatrix x, double y){
     return compound(x, y) ;
 }
 
+// [[Rcpp::export]]
+NumericVector test_large_vector() {
+    R_xlen_t nl = 5000000000;
+    NumericVector v(nl);
+    return v;
+}
+
