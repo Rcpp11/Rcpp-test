@@ -84,7 +84,6 @@ test_that( "Environment finds known environments", {
 	expect_equal( runit_globenv(), globalenv())
 	expect_equal( runit_emptyenv(), emptyenv())
 	expect_equal( runit_baseenv(), baseenv())
-	expect_equal( runit_emptyenv(), .BaseNamespaceEnv)
 })
 
 test_that( "Environment handles namespaces", {
